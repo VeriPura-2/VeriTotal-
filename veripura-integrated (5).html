@@ -1,0 +1,1996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VeriPura · Investor Overview · Seed 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:#0F2444; --navy-mid:#1F3864; --blue:#2E5FA3; --blue-lt:#4A80C4;
+  --sky:#D6E4F0; --pale:#EBF3FA; --cream:#F8F9FB;
+  --gold:#D4A847; --gold-dim:#B8902E; --gold-pale:rgba(212,168,71,.1);
+  --red:#C8504A; --ink:#1A2332; --muted:#5A6878; --border:#CBD8E8; --white:#FFFFFF;
+  --serif:'DM Serif Display',Georgia,serif;
+  --sans:'DM Sans',sans-serif;
+  --mono:'DM Mono',monospace;
+  --max:1080px; --gutter:clamp(1.5rem,4vw,3rem); --sec:clamp(60px,8vw,100px); --r:4px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;line-height:1.65;overflow-x:hidden;}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter);}
+.sec{padding:var(--sec) 0;}
+.sec--dark{background:var(--navy);}
+.sec--mid{background:var(--navy-mid);}
+.sec--pale{background:var(--pale);}
+.sec--white{background:var(--white);}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.15;color:var(--navy);}
+h1{font-size:clamp(2.4rem,5.5vw,4rem);}
+h2{font-size:clamp(1.9rem,3.5vw,2.7rem);}
+h3{font-size:1.5rem;}
+h4{font-family:var(--sans);font-weight:600;font-size:1rem;}
+p{line-height:1.7;}
+em.g{color:var(--gold);font-style:italic;font-family:var(--serif);}
+.eyebrow{font-family:var(--mono);font-size:.67rem;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:.7rem;margin-bottom:1.25rem;}
+.eyebrow::before{content:'';display:block;width:22px;height:1px;background:var(--gold);flex-shrink:0;}
+.eyebrow.light{color:var(--sky);}
+.eyebrow.light::before{background:var(--gold);}
+.eyebrow.eg{color:var(--gold);}
+.lead{font-size:1.05rem;color:var(--muted);max-width:620px;margin-top:.75rem;}
+.lead.light{color:rgba(255,255,255,.72);}
+.tag{display:inline-flex;align-items:center;gap:.35rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;padding:.22rem .6rem;border-radius:2px;}
+.tag--blue{background:var(--pale);color:var(--blue);}
+.tag--gold{background:var(--gold-pale);color:var(--gold-dim);}
+.tag--green{background:rgba(60,180,100,.1);color:#2a7a46;}
+.tag--ghost{background:rgba(255,255,255,.07);color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.12);}
+hr.rule{border:none;border-top:1px solid var(--border);margin:2.5rem 0;}
+hr.rule--light{border-color:rgba(255,255,255,.1);}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:.75rem 1.75rem;border-radius:var(--r);transition:all .2s;cursor:pointer;border:none;}
+.btn--gold{background:var(--gold);color:var(--navy);font-weight:500;}
+.btn--gold:hover{background:var(--gold-dim);}
+.btn--outline{background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.25);}
+.btn--outline:hover{border-color:var(--gold);color:var(--gold);}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(15,36,68,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.07);}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 var(--gutter);height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--serif);font-size:1.3rem;color:var(--white);text-decoration:none;}
+.nav-logo em{color:var(--gold);font-style:italic;}
+.nav-links{display:flex;gap:1.6rem;list-style:none;}
+.nav-links a{font-family:var(--mono);font-size:.63rem;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{font-family:var(--mono);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;padding:.38rem 1rem;background:var(--gold);color:var(--navy);border-radius:var(--r);text-decoration:none;font-weight:500;transition:background .2s;}
+.nav-cta:hover{background:var(--gold-dim);}
+
+/* HERO */
+.hero{background:var(--navy);padding:clamp(80px,10vw,120px) 0 clamp(60px,8vw,90px);position:relative;overflow:hidden;}
+.hero-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 70% at 90% 25%,rgba(46,95,163,.22) 0%,transparent 65%),radial-gradient(ellipse 35% 45% at 5% 85%,rgba(212,168,71,.07) 0%,transparent 60%);}
+.hero-grain{position:absolute;inset:0;opacity:.35;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");}
+.hero-badge{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:2rem;}
+.hero h1{color:var(--white);max-width:850px;}
+.hero h1 .accent{display:block;color:var(--gold);font-style:italic;}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,.78);max-width:600px;margin:1.75rem 0 2.5rem;line-height:1.75;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem;}
+.hero-divider{border:none;border-top:1px solid rgba(255,255,255,.09);margin-bottom:2.5rem;}
+.hero-stats{display:flex;gap:0;flex-wrap:wrap;}
+.hstat{padding:0 2.5rem 0 0;margin-right:2.5rem;border-right:1px solid rgba(255,255,255,.09);}
+.hstat:last-child{border-right:none;margin-right:0;padding-right:0;}
+.hstat-lbl{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:.3rem;}
+.hstat-val{font-family:var(--serif);font-size:2rem;color:var(--white);line-height:1;}
+.hstat-val em{color:var(--gold);font-style:normal;}
+
+/* INSIGHT BAND */
+.insight{background:var(--gold);padding:2.25rem 0;}
+.insight-inner{display:flex;align-items:center;gap:1.75rem;flex-wrap:wrap;}
+.insight-icon{font-size:1.6rem;flex-shrink:0;}
+.insight-text{font-family:var(--serif);font-size:clamp(1.05rem,2vw,1.35rem);color:var(--navy);max-width:800px;line-height:1.45;}
+.insight-text strong{font-style:italic;}
+
+/* TWO-ACT */
+.acts-grid{display:grid;grid-template-columns:1fr;gap:2px;background:var(--border);border-radius:8px;overflow:hidden;margin-top:2.5rem;}
+.act{padding:2.75rem;position:relative;}
+.act--1{background:var(--white);}
+.act--2{background:var(--navy);}
+.act-num{font-family:var(--mono);font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:1.2rem;}
+.act--1 .act-num{color:var(--muted);}
+.act--2 .act-num{color:rgba(255,255,255,.28);}
+.act h3{font-size:1.85rem;}
+.act--1 h3{color:var(--navy);}
+.act--2 h3{color:var(--white);}
+.act h3 em{color:var(--gold);font-style:italic;}
+.act-desc{font-size:.92rem;margin-top:.85rem;line-height:1.7;}
+.act--1 .act-desc{color:var(--muted);}
+.act--2 .act-desc{color:rgba(255,255,255,.72);}
+.act-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.75rem;}
+.act-arrow{display:none;}
+.act--1{background:var(--white);}
+.act--2{background:var(--navy);}
+/* In stacked layout, workflow grid can use more columns */
+.act-workflow{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-top:1.25rem;}
+.act-stage.ledger{grid-column:1/-1;}
+/* CPI gap stat strip */
+.act-cpi-strip{display:flex;align-items:center;gap:0;margin:1.5rem 0 1.25rem;border:1px solid var(--border);border-radius:6px;overflow:hidden;}
+.act-cpi-box{flex:1;padding:.85rem 1rem;text-align:center;}
+.act-cpi-box:first-child{background:rgba(200,80,74,.06);border-right:1px solid var(--border);}
+.act-cpi-box:nth-child(2){background:var(--pale);border-right:1px solid var(--border);}
+.act-cpi-box:last-child{background:rgba(60,158,78,.06);}
+.act-cpi-val{font-family:var(--serif);font-size:1.6rem;line-height:1;color:var(--navy);}
+.act-cpi-val em{font-style:normal;}
+.act-cpi-val.red em{color:var(--red);}
+.act-cpi-val.gap em{color:var(--gold);}
+.act-cpi-val.grn em{color:#2a7a46;}
+.act-cpi-lbl{font-family:var(--mono);font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:.3rem;}
+/* 9-stage workflow */
+.act-workflow{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-top:1.25rem;}
+.act-stage{background:var(--pale);border:1px solid var(--border);border-radius:4px;padding:.6rem .65rem;display:flex;align-items:flex-start;gap:.5rem;}
+.act-stage-icon{font-size:.85rem;flex-shrink:0;margin-top:.05rem;}
+.act-stage-num{font-family:var(--mono);font-size:.5rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);line-height:1;}
+.act-stage-name{font-family:var(--sans);font-weight:600;font-size:.72rem;color:var(--navy);margin:.1rem 0 .15rem;line-height:1.2;}
+.act-stage-desc{font-size:.68rem;color:var(--muted);line-height:1.4;}
+.act-stage.ledger{grid-column:1/-1;background:var(--navy);border-color:transparent;align-items:center;gap:.75rem;padding:.7rem 1rem;}
+.act-stage.ledger .act-stage-num{color:var(--gold);}
+.act-stage.ledger .act-stage-name{color:var(--white);}
+.act-stage.ledger .act-stage-desc{color:rgba(255,255,255,.45);}
+/* Revenue model */
+.act-rev{margin-top:1.5rem;padding:.85rem 1rem;border-radius:4px;font-size:.8rem;line-height:1.6;}
+.act--1 .act-rev{background:var(--pale);color:var(--muted);}
+.act--1 .act-rev strong{color:var(--navy);}
+.act--2 .act-rev{background:rgba(255,255,255,.05);color:rgba(255,255,255,.68);}
+.act--2 .act-rev strong{color:var(--gold);}
+/* VeriLiquid bullets */
+.act-pts{margin-top:1.25rem;display:flex;flex-direction:column;gap:.55rem;}
+.act-pt{display:flex;gap:.6rem;align-items:flex-start;font-size:.86rem;}
+.act--1 .act-pt{color:var(--muted);}
+.act--2 .act-pt{color:rgba(255,255,255,.72);}
+.act-pt::before{content:'→';font-family:var(--mono);font-size:.68rem;color:var(--gold);flex-shrink:0;margin-top:.18rem;}
+/* Expanded moat note */
+.acts-note{margin-top:1.75rem;background:var(--pale);border-radius:6px;overflow:hidden;}
+.acts-note-hdr{background:var(--navy);padding:1.1rem 1.75rem;display:flex;align-items:baseline;gap:.85rem;flex-wrap:wrap;}
+.acts-note-hdr span{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.38);}
+.acts-note-hdr strong{font-family:var(--serif);font-size:1.1rem;color:var(--white);font-weight:400;}
+.acts-note-hdr strong em{color:var(--gold);font-style:italic;}
+.acts-note-body{padding:1.75rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.75rem;}
+.moat-col h5{font-family:var(--sans);font-weight:600;font-size:.88rem;color:var(--navy);margin-bottom:.5rem;padding-bottom:.45rem;border-bottom:2px solid var(--gold);}
+.moat-col p{font-size:.84rem;color:var(--muted);line-height:1.72;}
+@media(max-width:800px){
+  .act-workflow{grid-template-columns:repeat(2,1fr);}
+  .acts-note-body{grid-template-columns:1fr;}
+}
+
+/* PROBLEM */
+.prob-cols{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;margin-top:2.5rem;}
+.stat-stack{display:flex;flex-direction:column;gap:1.25rem;}
+.sblock{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.75rem;}
+.snum{font-family:var(--serif);font-size:2.9rem;line-height:1;color:var(--navy);}
+.snum em{color:var(--gold);font-style:normal;}
+.slabel{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:.45rem 0 .6rem;}
+.sblock p{font-size:.86rem;color:var(--muted);}
+.sq-list{display:flex;flex-direction:column;gap:.9rem;}
+.sq{display:flex;gap:.9rem;align-items:flex-start;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.2rem;}
+.sq-icon{font-size:1.05rem;flex-shrink:0;margin-top:.1rem;}
+.sq h5{font-size:.88rem;color:var(--navy);margin-bottom:.22rem;}
+.sq p{font-size:.82rem;color:var(--muted);}
+
+/* CPI MAP */
+.map-sec{background:var(--navy);padding:var(--sec) 0;}
+.cpi-tt{position:fixed;z-index:999;background:var(--ink);color:var(--white);border:1px solid rgba(255,255,255,.12);padding:.7rem 1rem;border-radius:4px;font-family:var(--mono);font-size:.66rem;line-height:1.75;pointer-events:none;opacity:0;transition:opacity .15s;min-width:190px;}
+/* CPI card grid */
+.cpi-cards{display:grid;grid-template-columns:repeat(6,1fr);gap:.65rem;margin-top:2.5rem;}
+.cpi-card{background:rgba(200,80,74,.18);border:1px solid rgba(200,80,74,.25);border-radius:6px;padding:1rem 1.1rem;transition:transform .15s,border-color .15s;}
+.cpi-card:hover{transform:translateY(-2px);border-color:rgba(212,168,71,.5);}
+.cpi-card--fade{background:rgba(180,130,50,.12);border-color:rgba(212,168,71,.2);}
+.cpi-card--pilot{background:rgba(212,168,71,.15);border-color:rgba(212,168,71,.45);}
+.cpi-card--gap{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;justify-content:space-between;grid-column:span 2;}
+.cpi-card-score{font-family:var(--serif);font-size:2.4rem;color:var(--white);line-height:1;margin-bottom:.25rem;}
+.cpi-card--fade .cpi-card-score{color:rgba(255,255,255,.8);}
+.cpi-card--pilot .cpi-card-score{color:var(--gold);}
+.cpi-card-name{font-family:var(--sans);font-weight:600;font-size:.88rem;color:var(--white);margin-bottom:.15rem;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;}
+.cpi-pilot-badge{font-family:var(--mono);font-size:.48rem;letter-spacing:.07em;text-transform:uppercase;color:var(--gold);background:rgba(212,168,71,.15);padding:.12rem .38rem;border-radius:2px;}
+.cpi-card-reg{font-family:var(--mono);font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5rem;}
+.cpi-card-com{font-size:.75rem;color:rgba(255,255,255,.7);line-height:1.55;}
+/* Gap callout card internals */
+.cpi-gap-vs{display:flex;align-items:center;justify-content:space-between;gap:.5rem;padding:.25rem 0 1rem;}
+.cpi-gap-side{text-align:center;}
+.cpi-gap-num{font-family:var(--serif);font-size:2.4rem;color:var(--red);line-height:1;}
+.cpi-gap-num--grn{color:#3CB464;}
+.cpi-gap-lbl{font-family:var(--mono);font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:.2rem;}
+.cpi-gap-mid{text-align:center;}
+.cpi-gap-delta{font-family:var(--serif);font-size:2.2rem;color:var(--gold);line-height:1;}
+.cpi-gap-desc{font-family:var(--mono);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);}
+.cpi-gap-foot{font-size:.75rem;color:rgba(255,255,255,.65);line-height:1.6;border-top:1px solid rgba(255,255,255,.08);padding-top:.75rem;}
+/* Source line */
+.corridor-source{font-family:var(--mono);font-size:.56rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-top:.75rem;text-align:center;}
+/* CPI insight row */
+.cpi-insight-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1.75rem;}
+.cib{padding:1.25rem 1.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:6px;}
+.cib-lbl{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:.4rem;}
+.cib-val{font-family:var(--serif);font-size:1.5rem;color:var(--white);}
+.cib-val em{color:var(--gold);font-style:normal;}
+.cib-desc{font-size:.81rem;color:rgba(255,255,255,.65);margin-top:.3rem;}
+@media(max-width:900px){.cpi-cards{grid-template-columns:repeat(3,1fr);}.cpi-card--gap{grid-column:span 3;}}
+@media(max-width:600px){.cpi-cards{grid-template-columns:repeat(2,1fr);}.cpi-card--gap{grid-column:span 2;}}
+
+/* CUSTOMER */
+.cust-hero{background:var(--navy);border-radius:8px;overflow:hidden;margin-top:2.5rem;margin-bottom:2rem;display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.cust-hero-left{padding:2.5rem;border-right:1px solid rgba(255,255,255,.08);}
+.cust-hero-left h3{font-family:var(--serif);font-size:1.65rem;color:var(--white);margin-bottom:.75rem;line-height:1.2;}
+.cust-hero-left h3 em{color:var(--gold);font-style:italic;}
+.cust-hero-left>p{font-size:.9rem;color:rgba(255,255,255,.72);line-height:1.75;margin-bottom:1.5rem;}
+.cust-pain{display:flex;flex-direction:column;gap:0;border-top:1px solid rgba(255,255,255,.07);}
+.cust-pain-item{display:flex;gap:1rem;align-items:flex-start;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.07);}
+.cust-pain-item:last-child{border-bottom:none;}
+.cpi-check{width:20px;height:20px;border-radius:50%;background:var(--gold-pale);border:1px solid rgba(212,168,71,.4);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--gold);flex-shrink:0;margin-top:.1rem;}
+.cust-pain-item p{font-size:.84rem;color:rgba(255,255,255,.72);line-height:1.65;margin:0;}
+.cust-pain-item strong{color:rgba(255,255,255,.78);font-weight:600;}
+.cust-hero-right{padding:2.5rem;display:flex;flex-direction:column;gap:1rem;}
+.cust-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;flex:1;}
+.cust-stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:1.1rem 1.2rem;}
+.cust-stat-val{font-family:var(--serif);font-size:1.55rem;color:var(--white);line-height:1;}
+.cust-stat-val em{color:var(--gold);font-style:normal;}
+.cust-stat-lbl{font-family:var(--mono);font-size:.54rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-top:.3rem;line-height:1.4;}
+.cust-pilot{padding:.9rem 1.1rem;background:rgba(212,168,71,.08);border:1px solid rgba(212,168,71,.2);border-radius:6px;display:flex;align-items:center;gap:.75rem;}
+.cust-pilot-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(212,168,71,.2);flex-shrink:0;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 3px rgba(212,168,71,.2);}50%{box-shadow:0 0 0 5px rgba(212,168,71,.1);}}
+.cust-pilot p{font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin:0;}
+
+/* GTM section heading */
+.gtm-heading{margin-top:3rem;margin-bottom:1.75rem;}
+.gtm-heading h3{font-family:var(--serif);font-size:1.65rem;color:var(--navy);margin-bottom:.5rem;}
+.gtm-heading p{font-size:.9rem;color:var(--muted);max-width:680px;line-height:1.7;}
+
+/* GTM channel flow */
+.gtm-flow{display:grid;grid-template-columns:1fr 72px 1fr;gap:0;align-items:stretch;margin-top:0;}
+.gtm-ch{border:1px solid var(--border);border-radius:6px;overflow:hidden;}
+.gtm-ch-header{background:var(--navy);padding:1.25rem 1.75rem;}
+.gtm-ch-lbl{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.4rem;}
+.gtm-ch-header h4{font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--white);line-height:1.25;}
+.gtm-ch-body{padding:1.75rem;background:var(--white);}
+.gtm-ch-body p{font-size:.87rem;color:var(--ink);line-height:1.7;margin-bottom:1.25rem;}
+.gtm-ch-pts{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--border);}
+.gtm-ch-pt{font-size:.84rem;color:var(--ink);display:flex;gap:.65rem;align-items:flex-start;padding:.75rem 0;border-bottom:1px solid var(--border);}
+.gtm-ch-pt:last-child{border-bottom:none;}
+.gtm-ch-pt::before{content:'→';font-family:var(--mono);font-size:.65rem;color:var(--gold);flex-shrink:0;margin-top:.18rem;}
+.gtm-ch-pt strong{color:var(--navy);}
+.gtm-ch-footer{padding:.9rem 1.75rem;background:var(--pale);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;}
+.gtm-cac-badge{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;padding:.28rem .7rem;background:var(--navy);color:var(--gold);border-radius:2px;}
+
+/* GTM arrow column */
+.gtm-arrow-col{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;padding:1rem 0;}
+.gtm-arrow-line{width:1px;flex:1;background:var(--border);}
+.gtm-arrow-badge{width:44px;height:44px;border-radius:50%;background:var(--navy);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.58rem;color:var(--gold);text-align:center;line-height:1.25;flex-shrink:0;}
+
+/* GTM convergence note */
+.gtm-conv{margin-top:1.5rem;background:var(--navy);border-radius:6px;padding:1.75rem 2rem;display:grid;grid-template-columns:auto 1fr;gap:1.25rem;align-items:start;}
+.gtm-conv-icon{font-size:1.5rem;flex-shrink:0;margin-top:.15rem;}
+.gtm-conv h5{font-family:var(--sans);font-weight:600;font-size:.92rem;color:var(--white);margin-bottom:.45rem;}
+.gtm-conv p{font-size:.86rem;color:rgba(255,255,255,.75);line-height:1.7;margin:0;}
+.gtm-conv strong{color:var(--gold);}
+
+@media(max-width:800px){
+  .cust-hero{grid-template-columns:1fr;}
+  .cust-hero-left{border-right:none;border-bottom:1px solid rgba(255,255,255,.08);}
+  .gtm-flow{grid-template-columns:1fr;gap:1rem;}
+  .gtm-arrow-col{flex-direction:row;padding:0 1rem;}
+  .gtm-arrow-line{width:auto;height:1px;flex:1;}
+  .gtm-conv{grid-template-columns:1fr;}
+}
+
+/* PLATFORM */
+.psteps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;}
+.pstep{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:2rem;position:relative;}
+.pnum{font-family:var(--serif);font-size:4rem;color:var(--sky);line-height:1;position:absolute;top:.9rem;right:1.4rem;}
+.picon{font-size:1.35rem;margin-bottom:.9rem;}
+.pstep h4{color:var(--navy);margin-bottom:.45rem;}
+.pstep p{font-size:.86rem;color:var(--muted);}
+.segs-row{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:2.25rem;align-items:center;}
+.seg-lbl{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:.3rem;}
+.spill{font-family:var(--mono);font-size:.63rem;letter-spacing:.06em;text-transform:uppercase;padding:.32rem 1rem;border-radius:20px;display:flex;align-items:center;gap:.4rem;}
+.spill--on{background:var(--navy);color:var(--white);}
+.spill--on::before{content:'●';color:var(--gold);font-size:.4rem;}
+.spill--next{background:var(--pale);color:var(--blue);border:1px dashed var(--border);}
+
+/* SCREENSHOT */
+.ss-outer{margin-top:2.75rem;background:var(--navy-mid);border-radius:10px;padding:1.75rem;border:1px solid rgba(255,255,255,.08);}
+.browser{background:var(--white);border-radius:6px 6px 0 0;padding:.5rem .85rem;display:flex;align-items:center;gap:.4rem;border-bottom:1px solid var(--border);}
+.bdot{width:9px;height:9px;border-radius:50%;}
+.bbar{flex:1;margin-left:.45rem;height:19px;background:var(--pale);border-radius:3px;display:flex;align-items:center;padding:0 .7rem;}
+.bbar span{font-family:var(--mono);font-size:.57rem;color:var(--muted);}
+.app-shell{display:grid;grid-template-columns:185px 1fr;min-height:320px;border:1px solid var(--border);border-top:none;border-radius:0 0 6px 6px;overflow:hidden;}
+.sidebar{background:var(--navy);padding:1.15rem .85rem;display:flex;flex-direction:column;gap:.45rem;}
+.slogo{font-family:var(--serif);font-size:.9rem;color:var(--white);margin-bottom:.85rem;padding-bottom:.7rem;border-bottom:1px solid rgba(255,255,255,.07);}
+.slogo em{color:var(--gold);font-style:italic;}
+.snav{font-family:var(--mono);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;padding:.38rem .55rem;border-radius:3px;color:rgba(255,255,255,.38);}
+.snav.on{background:var(--gold-pale);color:var(--gold);}
+.snav.sh{color:rgba(255,255,255,.18);font-size:.5rem;margin-top:.65rem;padding-bottom:.18rem;border-bottom:1px solid rgba(255,255,255,.05);}
+.appmain{background:var(--cream);padding:1.35rem;}
+.apptitle{font-family:var(--serif);font-size:.95rem;color:var(--navy);margin-bottom:.9rem;}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin-bottom:.9rem;}
+.kpi{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:.65rem;}
+.kpi-l{font-family:var(--mono);font-size:.5rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);}
+.kpi-v{font-family:var(--serif);font-size:1.15rem;color:var(--navy);line-height:1.1;}
+.kpi-v em{color:var(--gold);font-style:normal;}
+.ships{display:flex;flex-direction:column;gap:.45rem;}
+.ship{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:.55rem .9rem;display:flex;align-items:center;justify-content:space-between;}
+.ship-n{font-size:.76rem;color:var(--ink);font-weight:500;}
+.ship-r{font-family:var(--mono);font-size:.55rem;color:var(--muted);}
+.sbadge{font-family:var(--mono);font-size:.52rem;text-transform:uppercase;letter-spacing:.06em;padding:.13rem .42rem;border-radius:2px;}
+.sb-ok{background:rgba(60,180,100,.1);color:#2a7a46;}
+.sb-warn{background:var(--gold-pale);color:var(--gold-dim);}
+.sb-att{background:rgba(200,80,74,.08);color:var(--red);}
+.ss-cap{text-align:center;margin-top:.9rem;font-family:var(--mono);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.28);}
+
+/* VERILIQUID */
+.vl-band{background:var(--gold);padding:2rem 0;}
+.vl-band p{font-family:var(--serif);font-size:clamp(1.1rem,2.2vw,1.5rem);color:var(--navy);max-width:720px;margin:0 auto;text-align:center;line-height:1.45;}
+.vl-band strong{font-style:italic;}
+.vl-sec{background:var(--navy);padding:var(--sec) 0;position:relative;overflow:hidden;}
+.vl-sec::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 60% at 80% 20%,rgba(212,168,71,.07) 0%,transparent 60%),radial-gradient(ellipse 40% 50% at 20% 80%,rgba(46,95,163,.14) 0%,transparent 60%);}
+.vl-hdr h2{color:var(--white);}
+.vl-hdr h2 em{color:var(--gold);}
+.vl-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem;}
+.vl-mechs{display:flex;flex-direction:column;gap:1.2rem;}
+.vlm{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:1.65rem;border-left:3px solid var(--gold);}
+.vlm-num{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.55rem;}
+.vlm h4{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--white);margin-bottom:.45rem;}
+.vlm p{font-size:.86rem;color:rgba(255,255,255,.72);line-height:1.7;}
+.vlm.seed{border-left-color:var(--blue-lt);}
+.vlm.seed .vlm-num{color:var(--blue-lt);}
+.vlm.seed h4{color:rgba(255,255,255,.75);}
+.vl-flow{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:1.85rem;}
+.vl-flow-t{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:1.4rem;}
+.vls{display:flex;gap:.9rem;align-items:flex-start;padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.vls:last-child{border-bottom:none;}
+.vls-dot{width:28px;height:28px;border-radius:50%;border:1px solid rgba(212,168,71,.3);background:var(--gold-pale);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.6rem;color:var(--gold);flex-shrink:0;}
+.vls h5{font-family:var(--sans);font-weight:500;font-size:.88rem;color:var(--white);margin-bottom:.18rem;}
+.vls p{font-size:.8rem;color:rgba(255,255,255,.65);}
+.vl-mkt{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08);border-radius:6px;overflow:hidden;margin-top:2.5rem;grid-column:1/-1;}
+.vlmk{padding:2rem;background:rgba(255,255,255,.04);text-align:center;}
+.vlmk-n{font-family:var(--serif);font-size:2.3rem;color:var(--white);line-height:1;}
+.vlmk-n em{color:var(--gold);font-style:normal;}
+.vlmk-l{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-top:.4rem;}
+.vlmk-d{font-size:.81rem;color:rgba(255,255,255,.62);margin-top:.45rem;}
+.vl-seed-note{margin-top:2rem;padding:1.4rem 1.75rem;background:var(--gold-pale);border:1px solid rgba(212,168,71,.2);border-radius:6px;grid-column:1/-1;}
+.vl-seed-note p{font-size:.9rem;color:rgba(255,255,255,.78);}
+.vl-seed-note strong{color:var(--gold);}
+
+/* WHY NOW */
+.mandate-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2.5rem;}
+.mcard{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.75rem;position:relative;}
+.mind{position:absolute;top:1.75rem;right:1.75rem;display:flex;align-items:center;gap:.35rem;}
+.mind-dot{width:7px;height:7px;border-radius:50%;}
+.mind-dot--live{background:#3CB464;box-shadow:0 0 0 3px rgba(60,180,100,.16);}
+.mind-dot--sig{background:var(--gold);box-shadow:0 0 0 3px var(--gold-pale);}
+.mind span{font-family:var(--mono);font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;}
+.mcard .msub{font-family:var(--mono);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.55rem;}
+.mcard h4{color:var(--navy);margin-bottom:.45rem;}
+.mcard p{font-size:.86rem;color:var(--muted);}
+
+/* MARKET */
+.mkt-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;}
+.mbox{border-radius:6px;padding:2.25rem;text-align:center;}
+.mbox--tam{background:var(--navy);}
+.mbox--sam{background:var(--navy-mid);}
+.mbox--som{background:var(--blue);}
+.mbox-l{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:.5rem;}
+.mbox-n{font-family:var(--serif);font-size:2.5rem;color:var(--white);line-height:1;}
+.mbox-n em{color:var(--gold);font-style:normal;}
+.mbox-d{font-size:.82rem;color:rgba(255,255,255,.65);margin-top:.55rem;}
+.seg-exp{margin-top:2.5rem;background:var(--white);border:1px solid var(--border);border-radius:6px;overflow:hidden;}
+.seg-exp-hdr{background:var(--pale);padding:.9rem 1.75rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);}
+.seg-row{display:grid;grid-template-columns:175px 1fr auto;align-items:center;padding:.95rem 1.75rem;gap:1.5rem;border-bottom:1px solid var(--border);}
+.seg-row:last-child{border-bottom:none;}
+.seg-name{font-weight:600;font-size:.88rem;color:var(--navy);}
+.seg-note{font-size:.84rem;color:var(--muted);}
+
+/* COMPETITIVE */
+.comp-wrap{margin-top:2.5rem;border-radius:6px;overflow:hidden;border:1px solid var(--border);background:var(--white);}
+.comp-t{width:100%;border-collapse:collapse;}
+.comp-t th{background:var(--navy);color:rgba(255,255,255,.5);font-family:var(--mono);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;padding:.8rem 1.2rem;text-align:left;font-weight:400;}
+.comp-t th:first-child{color:var(--white);}
+.comp-t td{padding:.8rem 1.2rem;font-size:.85rem;color:var(--muted);border-bottom:1px solid var(--border);vertical-align:middle;}
+.comp-t tr:last-child td{border-bottom:none;}
+.comp-t tr.vpr td{background:var(--pale);color:var(--ink);font-weight:500;}
+.comp-t tr.vpr td:first-child{color:var(--navy);font-weight:700;}
+.ck{color:#3CB464;}
+.cx{color:var(--red);}
+
+/* TRACTION */
+.traction-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2.5rem;}
+.tr-item{display:flex;gap:.9rem;align-items:flex-start;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.4rem;}
+.tr-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:.45rem;}
+.tr-dot--done{background:#3CB464;}
+.tr-dot--active{background:var(--blue-lt);box-shadow:0 0 0 3px rgba(74,128,196,.18);}
+.tr-item h4{color:var(--navy);margin-bottom:.28rem;}
+.tr-item p{font-size:.85rem;color:var(--muted);}
+
+/* TEAM */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;}
+.tcard{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:2rem;}
+.tavatar{width:50px;height:50px;border-radius:50%;background:var(--pale);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.3rem;color:var(--navy);margin-bottom:.9rem;}
+.tcard h4{color:var(--navy);}
+.trole{font-family:var(--mono);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin:.22rem 0 .7rem;}
+.tcard p{font-size:.83rem;color:var(--muted);}
+
+/* FINANCIALS */
+.fin-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem;}
+.fcard{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:2rem;}
+.fcard h4{color:var(--navy);margin-bottom:1.2rem;}
+.fbar{margin-bottom:.9rem;}
+.fbh{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.32rem;}
+.fbtrack{height:6px;background:var(--pale);border-radius:3px;overflow:hidden;}
+.fbfill{height:100%;border-radius:3px;background:var(--blue);}
+.fbfill--gold{background:var(--gold);}
+.fbfill--green{background:#3CB464;}
+.metrics-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.5rem;}
+.mbox2{background:var(--pale);border-radius:6px;padding:1.2rem;text-align:center;}
+.mbox2-v{font-family:var(--serif);font-size:1.65rem;color:var(--navy);}
+.mbox2-v em{color:var(--gold);font-style:normal;}
+.mbox2-l{font-family:var(--mono);font-size:.56rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:.22rem;}
+.vl-upside{margin-top:1.5rem;grid-column:1/-1;padding:1.4rem 1.75rem;background:var(--navy);border-radius:6px;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;}
+.vl-up-lbl{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);flex-shrink:0;}
+.vl-upside p{font-size:.9rem;color:rgba(255,255,255,.78);flex:1;}
+.vl-upside strong{color:var(--gold);}
+
+/* PROCEEDS */
+.proceeds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;}
+.pcard{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.75rem;text-align:center;}
+.ppct{font-family:var(--serif);font-size:2.7rem;color:var(--navy);line-height:1;}
+.ppct em{color:var(--gold);font-style:normal;}
+.plab{font-family:var(--mono);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:.38rem 0 .7rem;}
+.pcard p{font-size:.83rem;color:var(--muted);}
+
+/* INFRA */
+.infra-band{background:var(--pale);border-top:1px solid var(--border);padding:2.5rem 0;}
+.infra-inner{display:flex;align-items:flex-start;gap:2.5rem;flex-wrap:wrap;}
+.infra-txt{flex:1;min-width:250px;}
+.infra-txt h5{font-family:var(--sans);font-weight:600;font-size:.9rem;color:var(--navy);margin-bottom:.45rem;}
+.infra-txt p{font-size:.82rem;color:var(--muted);}
+.cert-row{display:flex;gap:.55rem;flex-wrap:wrap;align-items:center;margin-top:.5rem;}
+.cert{font-family:var(--mono);font-size:.56rem;letter-spacing:.06em;text-transform:uppercase;padding:.22rem .55rem;border:1px solid var(--border);border-radius:2px;color:var(--muted);background:var(--white);}
+
+/* INVEST */
+.invest-sec{background:var(--navy);padding:var(--sec) 0;text-align:center;position:relative;overflow:hidden;}
+.invest-sec::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 80% at 50% 120%,rgba(212,168,71,.1) 0%,transparent 60%);}
+.invest-sec h2{color:var(--white);}
+.invest-sec h2 em{color:var(--gold);}
+.invest-sec>.wrap>p{color:rgba(255,255,255,.72);max-width:500px;margin:.9rem auto 2.5rem;}
+.invest-terms{display:inline-grid;grid-template-columns:repeat(3,auto);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:6px;overflow:hidden;margin-bottom:2.5rem;}
+.it{padding:1.4rem 2.25rem;border-right:1px solid rgba(255,255,255,.08);}
+.it:last-child{border-right:none;}
+.it-l{font-family:var(--mono);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:.38rem;}
+.it-v{font-family:var(--serif);font-size:1.6rem;color:var(--white);}
+.it-v em{color:var(--gold);font-style:normal;}
+.invest-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+
+/* FOOTER */
+footer{background:var(--ink);padding:2.25rem 0;border-top:1px solid rgba(255,255,255,.06);}
+.ft-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.ft-logo{font-family:var(--serif);font-size:1.1rem;color:rgba(255,255,255,.65);}
+.ft-logo em{color:var(--gold);font-style:italic;}
+.ft-note{font-family:var(--mono);font-size:.56rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.2);}
+
+@media(max-width:800px){
+  .prob-cols,.vl-grid,.mandate-grid,.gtm-cols,.traction-grid,.team-grid,.fin-grid,.proceeds-grid,.mkt-trio,.cpi-insight-row{grid-template-columns:1fr;}
+  .psteps{grid-template-columns:1fr 1fr;}
+  .metrics-row{grid-template-columns:repeat(2,1fr);}
+  .hero-stats{flex-wrap:wrap;gap:1.5rem;}
+  .hstat{border-right:none;margin-right:0;padding-right:0;}
+  .invest-terms{grid-template-columns:1fr;}
+  .it{border-right:none;border-bottom:1px solid rgba(255,255,255,.08);}
+  .it:last-child{border-bottom:none;}
+  .nav-links{display:none;}
+  .seg-row{grid-template-columns:1fr 1fr;}
+  .app-shell{grid-template-columns:1fr;}
+  .sidebar{display:none;}
+  .vl-mkt,.vl-seed-note{grid-column:1;}
+  .act-workflow{grid-template-columns:repeat(2,1fr);}
+  .acts-note-body{grid-template-columns:1fr;}
+}
+@media(max-width:500px){
+  .psteps,.kpis{grid-template-columns:1fr;}
+}
+
+/* ── MECHANISM SECTION ── */
+.mech-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 2.5rem;
+}
+
+.mech-panel {
+  background: var(--white);
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.mech-panel--dark { background: var(--navy); }
+
+.mech-panel-hdr { display: flex; flex-direction: column; gap: .4rem; }
+.mech-panel-eyebrow {
+  font-family: var(--mono);
+  font-size: .6rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+}
+.mech-panel-eyebrow::before {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+.mech-panel-title {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--navy);
+  line-height: 1.2;
+  margin: 0;
+}
+.mech-panel-sub {
+  font-size: .84rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.mech-panel-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Risk curve */
+#risk-canvas {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+}
+.risk-legend {
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  width: 100%;
+  max-width: 380px;
+}
+.risk-legend-item {
+  display: flex;
+  align-items: flex-start;
+  gap: .65rem;
+  font-size: .78rem;
+  color: rgba(255,255,255,.65);
+  line-height: 1.5;
+}
+.risk-legend-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: .3rem;
+}
+
+/* Connector note */
+.mech-connector {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr;
+  gap: 0;
+  margin-top: 2px;
+  background: var(--border);
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+}
+.mech-conn-left {
+  background: var(--pale);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+.mech-conn-divider {
+  background: var(--border);
+}
+.mech-conn-num {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  color: var(--sky);
+  line-height: 1;
+}
+.mech-conn-text {
+  font-size: .85rem;
+  color: var(--muted);
+  line-height: 1.72;
+}
+.mech-conn-text strong {
+  color: var(--navy);
+  display: block;
+  margin-bottom: .3rem;
+  font-size: .88rem;
+}
+
+@media(max-width:860px) {
+  .mech-grid { grid-template-columns: 1fr; }
+  .mech-connector { grid-template-columns: 1fr; }
+  .mech-conn-divider { height: 1px; width: auto; }
+}
+
+/* ── HOW IT WORKS EMBED ── */
+#how-it-works-embed { margin-top:1.5rem; }
+
+.hiw-legend { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:14px; }
+.hiw-legend-item { display:flex; align-items:center; gap:6px; font-family:var(--mono); font-size:.6rem; color:var(--muted); letter-spacing:.04em; }
+.hiw-legend-dot { width:10px; height:10px; border-radius:50%; border:2px solid; flex-shrink:0; }
+
+.hiw-progress { height:3px; background:var(--border); border-radius:2px; margin-bottom:14px; overflow:hidden; }
+.hiw-progress-fill { height:100%; border-radius:2px; background:linear-gradient(90deg,#1a6b4a,#0f5a8a,#6b3fa0,#b84c00); width:0; transition:width .4s ease; }
+
+.hiw-phase-bar { display:flex; gap:2px; border-radius:5px 5px 0 0; overflow:hidden; }
+.hiw-phase { padding:9px 12px; font-family:var(--mono); font-size:.56rem; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:#fff; white-space:nowrap; }
+.hiw-phase.origin      { background:#1a6b4a; flex:2; }
+.hiw-phase.predeparture{ background:#0f5a8a; flex:3; }
+.hiw-phase.transit     { background:#6b3fa0; flex:2; }
+.hiw-phase.entry       { background:#b84c00; flex:3; }
+
+.hiw-track-card { background:#fff; border:1px solid var(--border); border-top:none; border-radius:0 0 8px 8px; overflow:hidden; }
+.hiw-track-scroll { overflow-x:auto; padding:28px 20px 20px; }
+.hiw-track-scroll::-webkit-scrollbar { height:4px; }
+.hiw-track-scroll::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
+
+.hiw-stages-row { display:flex; gap:0; min-width:780px; position:relative; align-items:flex-start; }
+.hiw-stages-row::before { content:''; position:absolute; top:34px; left:38px; right:38px; height:2px; background:var(--border); z-index:0; }
+
+.hiw-node { flex:1; display:flex; flex-direction:column; align-items:center; gap:9px; cursor:pointer; position:relative; z-index:1; padding:6px 3px 10px; border-radius:8px; transition:background .18s; user-select:none; }
+.hiw-node:hover { background:var(--pale); }
+.hiw-node.active { background:var(--pale); }
+
+.hiw-circle { width:68px; height:68px; border-radius:50%; background:#fff; border:2.5px solid; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1px; transition:transform .2s,box-shadow .2s; }
+.hiw-node:hover .hiw-circle, .hiw-node.active .hiw-circle { transform:scale(1.08); box-shadow:0 4px 16px rgba(0,0,0,.12); }
+.hiw-num { font-family:var(--mono); font-size:.55rem; font-weight:500; letter-spacing:.06em; line-height:1; }
+.hiw-icon { font-size:1.1rem; line-height:1; }
+.hiw-label { font-size:.66rem; font-weight:600; text-align:center; line-height:1.3; max-width:74px; color:var(--ink); }
+
+.hiw-scroll-hint { background:var(--pale); border-top:1px solid var(--border); text-align:center; padding:8px; font-family:var(--mono); font-size:.58rem; color:var(--muted); letter-spacing:.04em; }
+.hiw-click-hint { text-align:center; margin-top:14px; font-family:var(--mono); font-size:.68rem; color:var(--muted); display:flex; align-items:center; justify-content:center; gap:6px; }
+.hiw-bob { animation:hiw-bob 2s infinite; display:inline-block; }
+@keyframes hiw-bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
+
+/* ── SIDE PANEL ── */
+.hiw-overlay { position:fixed; inset:0; background:rgba(15,36,68,.5); z-index:800; opacity:0; pointer-events:none; transition:opacity .28s; backdrop-filter:blur(2px); }
+.hiw-overlay.open { opacity:1; pointer-events:all; }
+
+.hiw-panel { position:fixed; top:0; right:0; bottom:0; width:min(480px,100vw); background:#f8f9fb; z-index:801; transform:translateX(100%); transition:transform .32s cubic-bezier(.4,0,.2,1); display:flex; flex-direction:column; box-shadow:-8px 0 40px rgba(0,0,0,.14); overflow:hidden; }
+.hiw-panel.open { transform:translateX(0); }
+
+.hiw-phead { padding:18px 20px 14px; border-bottom:1px solid var(--border); background:#f8f9fb; display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+.hiw-pstage { font-family:var(--mono); font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; margin-bottom:4px; }
+.hiw-ptitle { font-family:var(--serif); font-size:1.35rem; font-weight:400; color:var(--navy); line-height:1.15; }
+.hiw-psub { font-size:.82rem; color:var(--muted); margin-top:3px; }
+.hiw-pclose { width:32px; height:32px; border-radius:50%; border:1px solid var(--border); background:none; cursor:pointer; font-size:.9rem; color:var(--muted); display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:all .15s; }
+.hiw-pclose:hover { background:var(--pale); color:var(--ink); }
+
+.hiw-pbody { overflow-y:auto; flex:1; padding:18px 20px; display:flex; flex-direction:column; gap:20px; }
+.hiw-pbody::-webkit-scrollbar { width:4px; }
+.hiw-pbody::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
+
+.hiw-sectitle { font-family:var(--mono); font-size:.58rem; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; display:flex; align-items:center; gap:8px; }
+.hiw-sectitle::after { content:''; flex:1; height:1px; background:var(--border); }
+
+.hiw-ba { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border-radius:6px; overflow:hidden; }
+.hiw-ba-card { padding:12px 14px; }
+.hiw-ba-card.before { background:#fff9f6; }
+.hiw-ba-card.after  { background:#f3faf7; }
+.hiw-ba-lbl { font-family:var(--mono); font-size:.56rem; font-weight:500; letter-spacing:.1em; text-transform:uppercase; margin-bottom:6px; display:flex; align-items:center; gap:4px; }
+.hiw-ba-card.before .hiw-ba-lbl { color:#b84c00; }
+.hiw-ba-card.after  .hiw-ba-lbl { color:#1a6b4a; }
+.hiw-ba-text { font-size:.8rem; line-height:1.6; color:var(--ink); }
+.hiw-ba-time { display:inline-block; font-family:var(--mono); font-size:.6rem; margin-top:7px; padding:2px 7px; border-radius:20px; }
+.hiw-ba-card.before .hiw-ba-time { background:#fae8d8; color:#b84c00; }
+.hiw-ba-card.after  .hiw-ba-time { background:#d4ede3; color:#1a6b4a; }
+
+.hiw-docs { display:flex; flex-direction:column; gap:5px; }
+.hiw-doc { display:flex; align-items:flex-start; gap:8px; background:#fff; border:1px solid var(--border); border-radius:5px; padding:8px 10px; }
+.hiw-doc-dot { width:7px; height:7px; border-radius:50%; margin-top:4px; flex-shrink:0; }
+.hiw-doc-dot.req { background:#1a6b4a; }
+.hiw-doc-name { font-size:.8rem; font-weight:600; color:var(--navy); }
+.hiw-doc-src { font-family:var(--mono); font-size:.66rem; color:var(--muted); margin-top:1px; }
+
+.hiw-vp-list { display:flex; flex-direction:column; gap:5px; }
+.hiw-vp-item { display:flex; align-items:flex-start; gap:7px; font-size:.82rem; line-height:1.55; color:var(--ink); }
+.hiw-vp-tick { color:#1a6b4a; font-size:.76rem; margin-top:2px; flex-shrink:0; }
+
+.hiw-twin { background:var(--navy); border-radius:6px; padding:12px 14px; }
+.hiw-twin-hdr { display:flex; align-items:center; gap:6px; font-family:var(--mono); font-size:.58rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+.hiw-twin-pulse { width:6px; height:6px; background:var(--gold); border-radius:50%; animation:hiw-pulse 2s infinite; }
+@keyframes hiw-pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+.hiw-twin-list { display:flex; flex-direction:column; gap:4px; }
+.hiw-twin-item { display:flex; align-items:flex-start; gap:6px; font-size:.8rem; line-height:1.5; color:rgba(255,255,255,.55); }
+.hiw-twin-arr { color:var(--gold); font-size:.68rem; margin-top:3px; flex-shrink:0; }
+
+.hiw-actors-row { display:flex; flex-wrap:wrap; gap:5px; }
+.hiw-actor { font-family:var(--mono); font-size:.6rem; padding:3px 9px; border-radius:20px; border:1px solid; }
+
+.hiw-pnav { display:flex; gap:6px; padding:12px 20px; border-top:1px solid var(--border); background:var(--pale); }
+.hiw-pnav-btn { flex:1; padding:8px 12px; border:1px solid var(--border); background:#fff; border-radius:5px; font-family:var(--mono); font-size:.64rem; letter-spacing:.04em; cursor:pointer; color:var(--ink); transition:all .15s; text-align:center; }
+.hiw-pnav-btn:hover:not(:disabled) { background:var(--navy); color:#fff; border-color:var(--navy); }
+.hiw-pnav-btn:disabled { opacity:.3; cursor:not-allowed; }
+
+@media(max-width:600px){
+  .hiw-ba { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#">Veri<em>Pura</em></a>
+    <ul class="nav-links">
+      <li><a href="#platform">Platform</a></li>
+      <li><a href="#problem">Problem</a></li>
+      <li><a href="#customer">Customer</a></li>
+      <li><a href="#veriliquid">VeriLiquid</a></li>
+      <li><a href="#market">Market</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#financials">Financials</a></li>
+    </ul>
+    <a class="nav-cta" href="#invest">Invest</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-grain"></div>
+  <div class="wrap">
+    <div class="hero-badge">VeriPura · Seed Stage · Confidential · March 2026</div>
+    <h1>The $10 trillion trade finance gap<span class="accent">starts with a documentation problem.</span></h1>
+    <p class="hero-sub">Banks won't finance what they can't trust. Food importers can't prove compliance at scale. We build the trust infrastructure first — then we unlock the financing. That is the two-act company.</p>
+    <div class="hero-btns">
+      <a class="btn btn--gold" href="#platform">See the Vision</a>
+      <a class="btn btn--outline" href="#invest">€750K SAFE · €3.75M Cap</a>
+    </div>
+    <hr class="hero-divider">
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-lbl">Trade Finance TAM</div><div class="hstat-val"><em>$10T+</em></div></div>
+      <div class="hstat"><div class="hstat-lbl">Seed Raise</div><div class="hstat-val"><em>€750K</em></div></div>
+      <div class="hstat"><div class="hstat-lbl">Y5 Net Revenue</div><div class="hstat-val"><em>€33.2M</em></div></div>
+      <div class="hstat"><div class="hstat-lbl">Investor MOIC</div><div class="hstat-val"><em>26–60×</em></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHT BAND -->
+<div class="insight">
+  <div class="wrap">
+    <div class="insight-inner">
+      <div class="insight-icon">⛓</div>
+      <p class="insight-text"><strong>You cannot finance what you cannot trust.</strong> Every dollar of trade finance risk in regulated food, pharma and cosmetics imports traces back to a single unresolved problem: no one can verify compliance documentation at the speed of trade. VeriPura solves that. VeriLiquid monetises it.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TWO-ACT PLATFORM -->
+<section class="sec sec--white" id="platform">
+  <div class="wrap">
+    <div class="eyebrow">The Two-Act Vision</div>
+    <h2>Compliance is the moat.<br><em class="g">Financing is the prize.</em></h2>
+    <p class="lead">We build the trust infrastructure first. Then we monetise it at a scale no competitor can replicate without starting over.</p>
+
+    <div class="acts-grid reveal">
+
+      <!-- ACT 1: VERIPURA -->
+      <div class="act act--1">
+        <div class="act-num">Act 1 · Now · Seed-funded</div>
+        <h3>Veri<em>Pura</em></h3>
+        <p class="act-desc">Pre-shipment food import compliance verification — validating documentation against EU 2017/625, FDA FSMA, EUDR, FSMA 204, TRACES NT and UK FRCR before a container moves. Every compliance verdict is anchored to the IOTA blockchain as a tamperproof W3C Verifiable Credential. Every attested shipment adds to a proprietary risk dataset no competitor can replicate.</p>
+
+        <!-- WHY: the CPI gap -->
+        <div class="act-cpi-strip">
+          <div class="act-cpi-box">
+            <div class="act-cpi-val red"><em>35</em></div>
+            <div class="act-cpi-lbl">Avg. origin CPI<br>Global South corridors</div>
+          </div>
+          <div class="act-cpi-box">
+            <div class="act-cpi-val gap"><em>44pt</em></div>
+            <div class="act-cpi-lbl">Documentation<br>integrity gap</div>
+          </div>
+          <div class="act-cpi-box">
+            <div class="act-cpi-val grn"><em>79</em></div>
+            <div class="act-cpi-lbl">Avg. receiving market CPI<br>EU · UK · US</div>
+          </div>
+        </div>
+
+        <!-- HOW: interactive 10-stage import journey -->
+        <div id="how-it-works-embed">
+          <!-- Phase legend -->
+          <div class="hiw-legend" id="hiw-legend"></div>
+          <!-- Progress bar -->
+          <div class="hiw-progress"><div class="hiw-progress-fill" id="hiw-progress-fill"></div></div>
+          <!-- Phase bar -->
+          <div class="hiw-phase-bar">
+            <div class="hiw-phase origin">Origin &amp; Processing</div>
+            <div class="hiw-phase predeparture">Pre-Departure</div>
+            <div class="hiw-phase transit">Transit &amp; Crossing</div>
+            <div class="hiw-phase entry">UK Entry &amp; Clearance</div>
+          </div>
+          <!-- Track -->
+          <div class="hiw-track-card">
+            <div class="hiw-track-scroll">
+              <div class="hiw-stages-row" id="hiw-stages-row"></div>
+            </div>
+            <div class="hiw-scroll-hint">← scroll to see all stages →</div>
+          </div>
+          <div class="hiw-click-hint"><span class="hiw-bob">👆</span> Click any stage to see documents, VeriPura actions, and TWIN notarisation</div>
+        </div>
+
+        <div class="act-rev"><strong>Revenue model:</strong> Subscription €199–€899/month (importer tier) + per-shipment attestation fee €15–€280. ACV €9.9K → €12.7K Y1–Y5. Channel via freight forwarders at 6× CAC advantage.</div>
+
+        <div class="act-tags" style="margin-top:1.25rem;">
+          <span class="tag tag--blue">⛓ IOTA · Web3-native</span>
+          <span class="tag tag--green">● Active build</span>
+          <span class="tag tag--blue">50+ specialised agents</span>
+        </div>
+        <div class="act-arrow">→</div>
+      </div>
+
+      <!-- ACT 2: VERILIQUID -->
+      <div class="act act--2">
+        <div class="act-num">Act 2 · Architecture begins this round · Full launch Series A</div>
+        <h3>Veri<em>Liquid</em></h3>
+        <p class="act-desc">The trade financing engine. VeriPura's attestation dataset becomes the risk infrastructure that global trade finance has never had — enabling real-world asset (RWA) tokenisation of verified trade receivables via a regulated SPV structure. Importers access financing at risk premiums no traditional lender can offer without our compliance data. The dataset VeriPura builds in Act 1 is what makes VeriLiquid's risk model possible and defensible.</p>
+
+        <div class="act-pts">
+          <div class="act-pt"><strong style="color:rgba(255,255,255,.7);">Regulated SPV structure.</strong> A trade finance SPV (Luxembourg or UAE) acquires LC-backed or invoice-backed receivables from the importer — a classic asset-backed instrument in a regulated wrapper.</div>
+          <div class="act-pt"><strong style="color:rgba(255,255,255,.7);">RWA tokenisation on IOTA.</strong> The SPV's cash-flow stream is represented on-chain as a real-world asset token, carrying the VeriPura attestation record as verifiable metadata. Whitelisted investors, KYC/AML at protocol level.</div>
+          <div class="act-pt"><strong style="color:rgba(255,255,255,.7);">DeFi-adjacent capital pools.</strong> Token holders deploy via regulated RWA yield pools (yield pegged to the underlying trade) or use tokens as stablecoin collateral. Capital from crypto-native funds, private credit and institutional investors — interacting via tokens, underlying asset a classic receivable.</div>
+          <div class="act-pt"><strong style="color:rgba(255,255,255,.7);">Smart contract settlement.</strong> Payment to the exporter triggers automatically on confirmed delivery and final attestation. SPV settled, token redeemed, importer's working capital freed for the next shipment.</div>
+          <div class="act-pt"><strong style="color:rgba(255,255,255,.7);">Seed allocation.</strong> Early IOTA tokenisation layer, smart contract framework and EU/UK/US trade finance regulatory mapping begin this round. Series A launches the full product.</div>
+        </div>
+
+        <div class="act-rev"><strong>Revenue model:</strong> SPV structuring &amp; origination fee + yield spread on financed receivables + protocol fee on DeFi pool volume. Addressable from the $1.7T annual trade finance gap, anchored by VeriPura's attested receivable pipeline.</div>
+
+        <div class="act-tags" style="margin-top:1.25rem;">
+          <span class="tag tag--gold">◈ RWA tokenisation</span>
+          <span class="tag tag--gold">SPV structure</span>
+          <span class="tag tag--ghost">Series A full launch</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPANDED MOAT NOTE -->
+    <div class="acts-note reveal">
+      <div class="acts-note-hdr">
+        <span>Investor argument</span>
+        <strong>Why this sequence is <em>the moat</em> — and why no competitor can replicate it.</strong>
+      </div>
+      <div class="acts-note-body">
+        <div class="moat-col">
+          <h5>Trust cannot be retrofitted</h5>
+          <p>A trade finance platform cannot simply bolt on a compliance layer and call it a risk model. The attestation record must be earned shipment by shipment — through a real workflow, with real suppliers, across real corridors, over time. Any competitor attempting to build VeriLiquid must first build VeriPura from scratch, at origin, in Global South markets, with regulatory coverage across EU, US and UK. They are not building it. We are the only team doing this.</p>
+        </div>
+        <div class="moat-col">
+          <h5>The dataset compounds</h5>
+          <p>Every shipment VeriPura attests adds a data point: corridor, product category, supplier, document type, error pattern, risk score. More clients means more corridors. More corridors means a richer risk model. A richer risk model means VeriLiquid can price financing more precisely — lower premiums for verified importers, higher margins for the platform. The flywheel accelerates with scale in a way that a new entrant with zero data cannot replicate, regardless of capital.</p>
+        </div>
+        <div class="moat-col">
+          <h5>Seed investors get both — free</h5>
+          <p>The seed round is priced on the VeriPura compliance business alone — €33.2M Y5 revenue, 79% gross margin, 26–60× MOIC on current terms. VeriLiquid is not in the model. It is the option that seed investors receive at no additional cost, backed by a data asset that compounds from the first shipment attested. No future round will offer this entry point. The valuation cap at Series A will reflect both acts.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPOUNDING MECHANISM -->
+<section class="sec sec--white" id="mechanism">
+  <div class="wrap">
+    <div class="eyebrow">The Compounding Mechanism</div>
+    <h2>Compliance data is the engine.<br><em class="g">Capital access is the prize.</em></h2>
+    <p class="lead">Every attested shipment makes the risk model richer. A richer risk model lowers financing cost. Lower financing cost unlocks trade that was previously unfinanceable. More trade generates more attestations. The loop is self-reinforcing.</p>
+
+    <div class="mech-grid">
+
+      <!-- FLYWHEEL -->
+      <div class="mech-panel" style="background:#f0ede8;">
+        <div class="mech-panel-hdr">
+          <span class="mech-panel-eyebrow">The Strategic Loop</span>
+          <h3 class="mech-panel-title">The VeriPura Flywheel</h3>
+          <p class="mech-panel-sub">Six nodes. Self-reinforcing. Defensible at scale.</p>
+        </div>
+        <div class="mech-panel-body">
+          <svg id="fw-svg" width="480" height="480" viewBox="0 0 540 540" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:480px;height:auto;">
+            <defs>
+              <filter id="fw-ds">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.38"/>
+              </filter>
+              <linearGradient id="fw-g0" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="540" y2="540">
+                <stop offset="0%" stop-color="#1a3560"/><stop offset="100%" stop-color="#080f20"/>
+              </linearGradient>
+              <linearGradient id="fw-g1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="540" y2="540">
+                <stop offset="0%" stop-color="#2a4a80"/><stop offset="100%" stop-color="#0f2040"/>
+              </linearGradient>
+              <linearGradient id="fw-g2" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="540" y2="540">
+                <stop offset="0%" stop-color="#4070b8"/><stop offset="100%" stop-color="#1e3e7a"/>
+              </linearGradient>
+              <linearGradient id="fw-g3" gradientUnits="userSpaceOnUse" x1="0" y1="540" x2="540" y2="0">
+                <stop offset="0%" stop-color="#a07010"/><stop offset="50%" stop-color="#D4A847"/><stop offset="100%" stop-color="#e8c060"/>
+              </linearGradient>
+              <linearGradient id="fw-g4" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="540" y2="540">
+                <stop offset="0%" stop-color="#1e7a50"/><stop offset="100%" stop-color="#0a3820"/>
+              </linearGradient>
+              <linearGradient id="fw-g5" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="540" y2="540">
+                <stop offset="0%" stop-color="#30a068"/><stop offset="100%" stop-color="#145530"/>
+              </linearGradient>
+            </defs>
+            <g id="fw-ring"></g>
+            <!-- Hub static -->
+            <circle cx="270" cy="270" r="97" fill="#060e1f" filter="url(#fw-ds)"/>
+            <circle cx="270" cy="270" r="97" fill="none" stroke="rgba(212,168,71,0.45)" stroke-width="1.5"/>
+            <circle cx="270" cy="270" r="111" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <text x="270" y="249" text-anchor="middle" font-family="DM Serif Display,serif" font-size="13" fill="#D4A847">VeriPura Guardian</text>
+            <text x="270" y="264" text-anchor="middle" font-family="DM Serif Display,serif" font-size="13" fill="#D4A847">Agents</text>
+            <text x="270" y="279" text-anchor="middle" font-family="DM Serif Display,serif" font-size="13" fill="#D4A847">+</text>
+            <text x="270" y="294" text-anchor="middle" font-family="DM Serif Display,serif" font-size="13" fill="#D4A847">Blockchain</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- RISK CURVE -->
+      <div class="mech-panel mech-panel--dark">
+        <div class="mech-panel-hdr">
+          <span class="mech-panel-eyebrow" style="color:var(--gold);">The Economic Argument</span>
+          <h3 class="mech-panel-title" style="color:var(--white);">Verification Lowers the Cost of Capital</h3>
+          <p class="mech-panel-sub" style="color:rgba(255,255,255,.65);">Unverified importers are priced out or excluded entirely. Attestation moves them down the risk curve — to rates traditional lenders cannot offer without our data.</p>
+        </div>
+        <div class="mech-panel-body">
+          <canvas id="risk-canvas" width="420" height="320"></canvas>
+          <div class="risk-legend">
+            <div class="risk-legend-item">
+              <div class="risk-legend-dot" style="background:var(--red)"></div>
+              <span>Unattested importer — lender risk premium applied, or excluded</span>
+            </div>
+            <div class="risk-legend-item">
+              <div class="risk-legend-dot" style="background:#3CB464"></div>
+              <span>VeriPura-attested — verified compliance record, lower risk tier</span>
+            </div>
+            <div class="risk-legend-item">
+              <div class="risk-legend-dot" style="background:var(--gold);border-radius:2px;width:18px;height:3px;margin-top:7px;"></div>
+              <span>VeriLiquid financing corridor — the addressable gap</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CONNECTOR NOTE -->
+    <div class="mech-connector reveal">
+      <div class="mech-conn-left">
+        <div class="mech-conn-num">01</div>
+        <div class="mech-conn-text"><strong>Compliance record as credit signal.</strong> Traditional lenders cannot price Global South food import risk because the documentation is opaque, inconsistent, and unverifiable. VeriPura's attestation converts that opacity into a standardised, tamperproof signal. For the first time, a lender — or an automated SPV — can price the receivable correctly.</div>
+      </div>
+      <div class="mech-conn-divider"></div>
+      <div class="mech-conn-left">
+        <div class="mech-conn-num">02</div>
+        <div class="mech-conn-text"><strong>The dataset compounds with every shipment.</strong> Each attested consignment adds corridor data, supplier history, document error patterns, and risk scores. The model becomes more precise over time. An importer with 12 months of clean attestation history gets a materially lower financing rate than one with 3. The platform rewards loyalty and punishes opacity — and no new entrant can replicate years of verified trade history.</div>
+      </div>
+      <div class="mech-conn-divider"></div>
+      <div class="mech-conn-left">
+        <div class="mech-conn-num">03</div>
+        <div class="mech-conn-text"><strong>Capital unlocks trade that would not otherwise happen.</strong> The $1.7T global trade finance gap is not a capital shortage — it is a trust shortage. Banks have the capital. They lack the risk visibility to deploy it into Global South corridors at acceptable rates. VeriPura provides that visibility. VeriLiquid deploys the capital. The importer gets financing at a rate that reflects their actual verified risk — not the blunt worst-case assumption a lender must make in the absence of data.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="sec sec--pale" id="problem">
+  <div class="wrap">
+    <div class="eyebrow">The Problem</div>
+    <h2>A structural liability gap.<br><em class="g">No one has solved it.</em></h2>
+    <p class="lead">Border rejections cost food importers up to €100K per incident. The cause is almost never the product — it is always the paperwork.</p>
+
+    <div class="prob-cols reveal">
+      <div class="stat-stack">
+        <div class="sblock">
+          <div class="snum"><em>39%</em></div>
+          <div class="slabel">of EU import refusals</div>
+          <p>Are documentation failures. The product is rarely the issue. The compliance paperwork is — and the importer pays.</p>
+        </div>
+        <div class="sblock">
+          <div class="snum">€<em>5K–100K</em></div>
+          <div class="slabel">Cost per compliance incident</div>
+          <p>Demurrage, storage, re-inspection, destruction. Every cost falls on the importer. For around <strong>€100 per shipment</strong>, VeriPura prevents it. That is the value proposition.</p>
+        </div>
+        <div class="sblock">
+          <div class="snum"><em>100%</em></div>
+          <div class="slabel">Importer legal liability</div>
+          <p>EU and US importers bear full legal accountability — but depend entirely on Global South suppliers to produce correct paperwork. A structural liability gap with no current fix.</p>
+        </div>
+      </div>
+      <div class="sq-list">
+        <p style="font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;">The Status Quo</p>
+        <div class="sq"><div class="sq-icon">✉</div><div><h5>Email chains and PDFs</h5><p>No audit trail, no version control, no accountability. Easily falsified, impossible to verify at the speed of trade.</p></div></div>
+        <div class="sq"><div class="sq-icon">👤</div><div><h5>Freelance compliance consultants</h5><p>Slow, expensive, unscalable. Every €50K consultant is a future VeriPura client.</p></div></div>
+        <div class="sq"><div class="sq-icon">⚠</div><div><h5>No platform exists at this intersection</h5><p>No agent-native, blockchain-attested compliance platform for Global South → regulated market food imports. The market is entirely unserved.</p></div></div>
+        <div class="sq"><div class="sq-icon">🏦</div><div><h5>Trade finance refuses unverified cargo</h5><p>Banks price in documentation risk as a blanket premium or reject financing entirely. VeriPura's attestation data removes that premium — unlocking VeriLiquid.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CPI HEATMAP -->
+<section class="map-sec" id="heatmap">
+  <div class="wrap">
+    <div class="eyebrow light">Where the Risk Lives</div>
+    <h2 style="color:var(--white);margin-top:.25rem;">The greater the <em class="g">CPI gap,</em><br>the greater the importer's liability.</h2>
+    <p class="lead light" style="margin-bottom:1.75rem;">VeriPura operates on every corridor where institutional integrity risk creates documentary compliance exposure. The gap between origin and receiving market CPI is the structural driver of every border rejection — and every VeriPura subscription.</p>
+
+    <!-- CPI CORRIDOR CARDS -->
+    <div class="cpi-cards reveal">
+      <div class="cpi-card"><div class="cpi-card-score">24</div><div class="cpi-card-name">Bangladesh</div><div class="cpi-card-reg">CPI Score · SA</div><div class="cpi-card-com">Shrimp &amp; prawns · Frozen fish · Vegetables</div></div>
+      <div class="cpi-card"><div class="cpi-card-score">26</div><div class="cpi-card-name">Nigeria</div><div class="cpi-card-reg">CPI Score · AFR</div><div class="cpi-card-com">Sesame seeds · Cocoa beans · Cashews</div></div>
+      <div class="cpi-card"><div class="cpi-card-score">29</div><div class="cpi-card-name">Pakistan</div><div class="cpi-card-reg">CPI Score · SA</div><div class="cpi-card-com">Basmati rice · Citrus · Onions</div></div>
+      <div class="cpi-card"><div class="cpi-card-score">31</div><div class="cpi-card-name">Mexico</div><div class="cpi-card-reg">CPI Score · LAM</div><div class="cpi-card-com">Avocados · Tomatoes · Berries</div></div>
+      <div class="cpi-card"><div class="cpi-card-score">31</div><div class="cpi-card-name">Kenya</div><div class="cpi-card-reg">CPI Score · AFR</div><div class="cpi-card-com">Tea · Coffee · Fresh vegetables</div></div>
+      <div class="cpi-card"><div class="cpi-card-score">33</div><div class="cpi-card-name">Peru</div><div class="cpi-card-reg">CPI Score · LAM</div><div class="cpi-card-com">Asparagus · Avocados · Blueberries</div></div>
+      <div class="cpi-card"><div class="cpi-card-score">33</div><div class="cpi-card-name">Philippines</div><div class="cpi-card-reg">CPI Score · SEA</div><div class="cpi-card-com">Coconut products · Banana · Pineapple</div></div>
+      <div class="cpi-card"><div class="cpi-card-score">34</div><div class="cpi-card-name">Indonesia</div><div class="cpi-card-reg">CPI Score · SEA</div><div class="cpi-card-com">Palm oil · Coffee · Cocoa</div></div>
+      <div class="cpi-card"><div class="cpi-card-score">35</div><div class="cpi-card-name">Turkey</div><div class="cpi-card-reg">CPI Score · MENA</div><div class="cpi-card-com">Hazelnuts · Dried fruits · Tomatoes</div></div>
+      <div class="cpi-card"><div class="cpi-card-score">35</div><div class="cpi-card-name">Egypt</div><div class="cpi-card-reg">CPI Score · MENA</div><div class="cpi-card-com">Citrus · Potatoes · Onions</div></div>
+      <div class="cpi-card cpi-card--pilot"><div class="cpi-card-score">36</div><div class="cpi-card-name">Brazil <span class="cpi-pilot-badge">● Pilot</span></div><div class="cpi-card-reg">CPI Score · LAM</div><div class="cpi-card-com">Soy · Beef · Coffee</div></div>
+      <div class="cpi-card"><div class="cpi-card-score">37</div><div class="cpi-card-name">Argentina</div><div class="cpi-card-reg">CPI Score · LAM</div><div class="cpi-card-com">Soy · Beef · Sunflower oil</div></div>
+      <div class="cpi-card"><div class="cpi-card-score">38</div><div class="cpi-card-name">Morocco</div><div class="cpi-card-reg">CPI Score · AFR</div><div class="cpi-card-com">Citrus · Tomatoes · Olives &amp; olive oil</div></div>
+      <div class="cpi-card"><div class="cpi-card-score">39</div><div class="cpi-card-name">India</div><div class="cpi-card-reg">CPI Score · SA</div><div class="cpi-card-com">Spices · Rice · Seafood</div></div>
+      <div class="cpi-card cpi-card--fade"><div class="cpi-card-score">40</div><div class="cpi-card-name">Vietnam</div><div class="cpi-card-reg">CPI Score · SEA</div><div class="cpi-card-com">Seafood · Coffee · Cashews</div></div>
+      <div class="cpi-card cpi-card--fade"><div class="cpi-card-score">42</div><div class="cpi-card-name">China</div><div class="cpi-card-reg">CPI Score · EA</div><div class="cpi-card-com">Processed vegetables · Garlic · Seafood</div></div>
+      <div class="cpi-card cpi-card--fade"><div class="cpi-card-score">43</div><div class="cpi-card-name">Ghana</div><div class="cpi-card-reg">CPI Score · AFR</div><div class="cpi-card-com">Cocoa beans · Pineapple · Cashews</div></div>
+      <!-- GAP CALLOUT CARD -->
+      <div class="cpi-card cpi-card--gap">
+        <div class="cpi-gap-vs">
+          <div class="cpi-gap-side"><div class="cpi-gap-num">35</div><div class="cpi-gap-lbl">Avg Origin CPI</div></div>
+          <div class="cpi-gap-mid"><div class="cpi-gap-delta">44pt</div><div class="cpi-gap-desc">gap</div></div>
+          <div class="cpi-gap-side"><div class="cpi-gap-num cpi-gap-num--grn">79</div><div class="cpi-gap-lbl">Avg Receiving CPI</div></div>
+        </div>
+        <div class="cpi-gap-foot">The greater the gap, the greater the importer's documentary liability — and VeriPura's market.</div>
+      </div>
+    </div>
+
+    <div class="corridor-source">Source: Transparency International CPI 2024 · Scale 0 (highly corrupt) → 100 (very clean) · Additional corridors onboarded on request</div>
+
+    <!-- SUMMARY STATS -->
+    <div class="cpi-insight-row reveal">
+      <div class="cib">
+        <div class="cib-lbl">Avg. Receiving Market CPI</div>
+        <div class="cib-val"><em>79</em> / 100</div>
+        <div class="cib-desc">NL · DE · UK · US · CH · BE · DK · SE · CA — high-compliance jurisdictions with mandatory border inspection regimes. Full legal liability sits with the importer.</div>
+      </div>
+      <div class="cib">
+        <div class="cib-lbl">Avg. Origin Corridor CPI</div>
+        <div class="cib-val"><em>35</em> / 100</div>
+        <div class="cib-desc">A 44-point documentation integrity gap. Structural, permanent, and growing as receiving-market regulations tighten. This gap is VeriPura's entire addressable market.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div id="cpi-tt" class="cpi-tt"></div>
+
+<!-- CUSTOMER -->
+<section class="sec sec--white" id="customer">
+  <div class="wrap">
+    <div class="eyebrow">The Customer &amp; Go-to-Market</div>
+    <h2>One customer.<br><em class="g">The food importer.</em></h2>
+    <p class="lead">Every other participant — forwarder, carrier, customs broker — is a distribution channel. The importer is the only party with full legal liability, a regulatory mandate, and the budget to act.</p>
+
+    <!-- CUSTOMER HERO BLOCK -->
+    <div class="cust-hero reveal">
+      <div class="cust-hero-left">
+        <h3>The EU &amp; US <em>Food Importer</em></h3>
+        <p>Sourcing from Global South corridors — Brazil, Vietnam, India, Morocco, Thailand and beyond — where documentation complexity is high and supplier compliance capacity is low. One wrong field on a health certificate holds a container at the border. The importer bears 100% of the cost and 100% of the legal liability, with no scalable tool to prevent it.</p>
+        <div class="cust-pain">
+          <div class="cust-pain-item">
+            <div class="cpi-check">✓</div>
+            <p><strong>Full regulatory mandate, no scalable solution.</strong> EUDR, FSMA 204 and EU Farm to Fork impose documentation obligations currently managed through consultants, email chains and manual checklists. Not a niche problem — it is the entire market.</p>
+          </div>
+          <div class="cust-pain-item">
+            <div class="cpi-check">✓</div>
+            <p><strong>Losses up to 1,000× the platform cost.</strong> A single FDA detention or EU border rejection costs €5K–€100K in demurrage, re-inspection, destruction and buyer penalties. VeriPura costs around €100 per shipment to prevent it.</p>
+          </div>
+          <div class="cust-pain-item">
+            <div class="cpi-check">✓</div>
+            <p><strong>Dual EU/US accounts are the highest-ARPA segment.</strong> Importers managing both TRACES NT and FDA Prior Notice obligations on the same corridor have the deepest pain and the strongest willingness to pay.</p>
+          </div>
+        </div>
+      </div>
+      <div class="cust-hero-right">
+        <div class="cust-stat-grid">
+          <div class="cust-stat">
+            <div class="cust-stat-val">~<em>15,500</em></div>
+            <div class="cust-stat-lbl">Addressable importers<br>EU/EEA · US · Dual</div>
+          </div>
+          <div class="cust-stat">
+            <div class="cust-stat-val"><em>100%</em></div>
+            <div class="cust-stat-lbl">Legal liability<br>borne by importer</div>
+          </div>
+          <div class="cust-stat">
+            <div class="cust-stat-val">€<em>5–100K</em></div>
+            <div class="cust-stat-lbl">Cost per compliance<br>incident avoided</div>
+          </div>
+          <div class="cust-stat">
+            <div class="cust-stat-val"><em>1,000×</em></div>
+            <div class="cust-stat-lbl">Max loss vs.<br>platform cost</div>
+          </div>
+        </div>
+        <div class="cust-pilot">
+          <div class="cust-pilot-dot"></div>
+          <p>Founding pilot programme active — importer &amp; partner slots being filled now</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- GTM CHANNEL FLOW -->
+    <div class="gtm-heading">
+      <div class="eyebrow">Go-to-Market</div>
+      <h3>Two routes to the same customer.</h3>
+      <p>Direct to enterprise for brand-owned importers. Freight forwarder channel for the tens of thousands of SME importers. Together they cover the full SAM at radically different acquisition economics — and every new forwarder opens a new geography or product sector without additional headcount.</p>
+    </div>
+
+    <div class="gtm-flow reveal">
+
+      <!-- DIRECT -->
+      <div class="gtm-ch">
+        <div class="gtm-ch-header">
+          <div class="gtm-ch-lbl">Route 1 · Direct Sales</div>
+          <h4>Brand-owned &amp; enterprise importers</h4>
+        </div>
+        <div class="gtm-ch-body">
+          <p>Large food businesses with their own logistics and compliance operations — companies with the shipment volumes, compliance teams and organisational budget to justify a direct relationship. Sold by founders through network and targeted outbound.</p>
+          <div class="gtm-ch-pts">
+            <div class="gtm-ch-pt">Full-platform deployment across all active sourcing corridors</div>
+            <div class="gtm-ch-pt"><strong>Highest ARPA</strong> — dual EU/US compliance and multi-corridor accounts</div>
+            <div class="gtm-ch-pt">Generates reference clients and case studies that validate the channel programme</div>
+            <div class="gtm-ch-pt">Data-rich onboarding accelerates the corridor risk model from day one</div>
+          </div>
+        </div>
+        <div class="gtm-ch-footer">
+          <span class="gtm-cac-badge">Higher CAC</span>
+          <span class="gtm-cac-badge">Highest ARPA</span>
+          <span class="gtm-cac-badge">Reference value</span>
+        </div>
+      </div>
+
+      <!-- ARROW -->
+      <div class="gtm-arrow-col">
+        <div class="gtm-arrow-line"></div>
+        <div class="gtm-arrow-badge">6×<br>CAC<br>adv.</div>
+        <div class="gtm-arrow-line"></div>
+      </div>
+
+      <!-- FORWARDER CHANNEL -->
+      <div class="gtm-ch">
+        <div class="gtm-ch-header">
+          <div class="gtm-ch-lbl">Route 2 · Freight Forwarder Channel</div>
+          <h4>The tens of thousands of SME importers</h4>
+        </div>
+        <div class="gtm-ch-body">
+          <p>Freight forwarders already manage the document bundle for every shipment they handle. Each partner distributes VeriPura to their entire importer client base — making the forwarder relationship the primary engine of scale, not just a distribution tactic.</p>
+          <div class="gtm-ch-pts">
+            <div class="gtm-ch-pt"><strong>6× CAC advantage</strong> — the forwarder absorbs acquisition cost; their client relationship does the selling</div>
+            <div class="gtm-ch-pt">Each new forwarder <strong>instantly opens a new geography or product sector</strong> — zero additional VeriPura headcount required</div>
+            <div class="gtm-ch-pt">Forwarders earn revenue share on every shipment verified — strong ongoing incentive to onboard and retain clients</div>
+            <div class="gtm-ch-pt">Forwarder liability protection (blockchain-attested compliance record) makes the value proposition self-evident to their own clients</div>
+            <div class="gtm-ch-pt">Same forwarder relationships enable <strong>horizontal expansion</strong> into pharma, cosmetics and supplements without rebuilding the channel</div>
+          </div>
+        </div>
+        <div class="gtm-ch-footer">
+          <span class="gtm-cac-badge">6× lower CAC</span>
+          <span class="gtm-cac-badge">Scale engine</span>
+          <span class="gtm-cac-badge">Sector expansion</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONVERGENCE NOTE -->
+    <div class="gtm-conv reveal">
+      <div class="gtm-conv-icon">🎯</div>
+      <div>
+        <h5>Both routes converge on the same customer.</h5>
+        <p>Whether onboarded directly or via a freight forwarder, every client is a food importer with full legal liability and an active regulatory obligation. The channel strategy changes the economics and the speed — not who VeriPura serves. The forwarder channel is how VeriPura reaches <strong>2,610 clients by Year 5</strong> without a proportional sales headcount. And it is the same infrastructure that carries VeriPura into pharma, cosmetics and supplements when the time comes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM -->
+<section class="sec sec--pale" id="solution">
+  <div class="wrap">
+    <div class="eyebrow">The Platform</div>
+    <h2>Three layers.<br><em class="g">One border-ready shipment.</em></h2>
+    <p class="lead">Agentic workflows, blockchain attestation and freight partner distribution — working together to prevent border rejections before a shipment leaves origin country.</p>
+
+    <div class="psteps reveal">
+      <div class="pstep"><div class="pnum">01</div><div class="picon">🤖</div><h4>Agentic Workflows</h4><p>Collect and validate supplier certificates, cross-check EU and US regulatory requirements, auto-generate corrected documentation. Problems fixed at source — not at the border.</p></div>
+      <div class="pstep"><div class="pnum">02</div><div class="picon">⛓</div><h4>Blockchain Attestation</h4><p>IOTA creates an immutable, tamper-proof record of every document and compliance decision. Customs verifies instantly. No centralised database. No retrospective falsification. Becomes VeriLiquid's risk layer.</p></div>
+      <div class="pstep"><div class="pnum">03</div><div class="picon">🚢</div><h4>Freight Partner Channel</h4><p>Freight forwarders as distribution for SME importers. Every new forwarder opens a new geography. 6× CAC advantage over direct. Each new partner scales the attestation dataset.</p></div>
+    </div>
+
+    <!-- APP SCREENSHOT -->
+    <div class="ss-outer reveal">
+      <div class="browser">
+        <div class="bdot" style="background:#FF5F57"></div>
+        <div class="bdot" style="background:#FEBC2E"></div>
+        <div class="bdot" style="background:#28C840"></div>
+        <div class="bbar"><span>app.veripura.com · Compliance Dashboard</span></div>
+      </div>
+      <div class="app-shell">
+        <div class="sidebar">
+          <div class="slogo">Veri<em>Pura</em></div>
+          <div class="snav sh">Compliance</div>
+          <div class="snav on">Dashboard</div>
+          <div class="snav">Shipments</div>
+          <div class="snav">Documents</div>
+          <div class="snav sh">Attestation</div>
+          <div class="snav">Ledger</div>
+          <div class="snav">Certificates</div>
+          <div class="snav sh">VeriLiquid</div>
+          <div class="snav">Invoices</div>
+          <div class="snav">Financing</div>
+        </div>
+        <div class="appmain">
+          <div class="apptitle">Compliance Dashboard — March 2026</div>
+          <div class="kpis">
+            <div class="kpi"><div class="kpi-l">Active Shipments</div><div class="kpi-v"><em>47</em></div></div>
+            <div class="kpi"><div class="kpi-l">Attested This Month</div><div class="kpi-v"><em>312</em></div></div>
+            <div class="kpi"><div class="kpi-l">Compliance Rate</div><div class="kpi-v"><em>98.7%</em></div></div>
+          </div>
+          <div class="ships">
+            <div class="ship"><div><div class="ship-n">Minerva Foods — Beef Forequarter</div><div class="ship-r">Santos → Felixstowe · IPAFFS · EUDR</div></div><span class="sbadge sb-ok">Attested</span></div>
+            <div class="ship"><div><div class="ship-n">JBS Export — Rump Cap</div><div class="ship-r">Paranaguá → Rotterdam · TRACES NT</div></div><span class="sbadge sb-warn">Cert pending</span></div>
+            <div class="ship"><div><div class="ship-n">Vietnam Coffee Co. — Green Bean</div><div class="ship-r">Ho Chi Minh → Hamburg · EUDR · FDA</div></div><span class="sbadge sb-ok">Attested</span></div>
+            <div class="ship"><div><div class="ship-n">Maroc Agrumes — Citrus</div><div class="ship-r">Agadir → Antwerp · EU Farm to Fork</div></div><span class="sbadge sb-att">Action required</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="ss-cap">VeriPura compliance dashboard · Illustrative UI · Application screen capture to be inserted here</div>
+    </div>
+
+    <div class="segs-row">
+      <span class="seg-lbl">Market Segments</span>
+      <span class="spill spill--on">Food &amp; Beverage</span>
+      <span class="spill spill--next">→ Pharmaceuticals</span>
+      <span class="spill spill--next">→ Cosmetics</span>
+      <span class="spill spill--next">→ Vitamins &amp; Supplements</span>
+    </div>
+    <p style="font-size:.84rem;color:var(--muted);margin-top:.7rem;">Same structural problem — mandatory documentation obligations, Global South origin, high-compliance receiving markets — across every regulated import category. Food is the beachhead. The platform scales horizontally across segments with no additional architecture cost.</p>
+  </div>
+</section>
+
+<!-- VERILIQUID BAND -->
+<div class="vl-band">
+  <div class="wrap">
+    <p><strong>Once the trusted network is in place, the financing becomes possible.</strong> Attested trade data is the risk infrastructure that global trade finance has never had — and the reason VeriLiquid cannot exist without VeriPura.</p>
+  </div>
+</div>
+
+<!-- VERILIQUID -->
+<section class="vl-sec" id="veriliquid">
+  <div class="wrap">
+    <div class="vl-hdr">
+      <div class="eyebrow eg">VeriLiquid · Act 2</div>
+      <h2>The <em class="g">billion-dollar</em> layer.</h2>
+      <p class="lead light">The $10 trillion global trade finance gap exists because risk cannot be assessed on unverified cargo. VeriLiquid solves this with a regulated real-world asset (RWA) tokenisation structure — a DeFi-adjacent model in which attested trade receivables are tokenised, held in a regulated SPV, and made available to crypto-native and private-credit investors. VeriPura's attestation data is what makes the risk model defensible.</p>
+    </div>
+
+    <div class="vl-grid reveal">
+      <div class="vl-mechs">
+        <div class="vlm">
+          <div class="vlm-num">Mechanic 01</div>
+          <h4>RWA Tokenisation via Regulated SPV</h4>
+          <p>A trade finance SPV acquires LC-backed or invoice-backed receivables from the importer. The cash-flow stream is tokenised on IOTA as a real-world asset (RWA) — structurally equivalent to an asset-backed security, but represented on-chain and settled via smart contract. The SPV sits in a regulated jurisdiction (Luxembourg or UAE). KYC/AML and whitelisted investor access apply. No attestation from VeriPura, no token. No token, no financing.</p>
+        </div>
+        <div class="vlm">
+          <div class="vlm-num">Mechanic 02</div>
+          <h4>DeFi-Adjacent Yield &amp; Collateral Pools</h4>
+          <p>Token holders interact via RWA-enabled DeFi protocols — not open permissionless pools, but regulated structures with whitelisted assets and KYC/AML gates. They can deposit tokens into yield pools pegged to the underlying trade returns, or use them as collateral for stablecoin loans. Payment to the exporter/supplier triggers automatically via smart contract on attestation confirmation. The importer's cash cycle shortens. The supplier's risk drops. The investor earns a yield anchored to a verified physical trade flow.</p>
+        </div>
+        <div class="vlm seed">
+          <div class="vlm-num">Seed Allocation</div>
+          <h4>Architecture begins now</h4>
+          <p>A portion of this seed round funds early VeriLiquid architecture — IOTA tokenisation layer, smart contract framework and regulatory mapping for EU, UK and US trade finance rules. Full launch readiness at Series A.</p>
+        </div>
+      </div>
+
+      <div class="vl-flow">
+        <div class="vl-flow-t">How a VeriLiquid transaction works</div>
+        <div class="vls"><div class="vls-dot">01</div><div><h5>Shipment attested by VeriPura</h5><p>Compliance documentation verified and written immutably to the IOTA blockchain before the shipment leaves origin. This attestation record is the risk foundation of the entire flow.</p></div></div>
+        <div class="vls"><div class="vls-dot">02</div><div><h5>SPV acquires the receivable</h5><p>A regulated trade finance SPV (Luxembourg or UAE) purchases the LC-backed or invoice-backed receivable from the importer. The underlying asset is a classic trade finance instrument — the SPV provides the regulated wrapper.</p></div></div>
+        <div class="vls"><div class="vls-dot">03</div><div><h5>Receivable tokenised as an RWA on IOTA</h5><p>The SPV's cash-flow stream is represented on-chain as a real-world asset token. The token carries the VeriPura attestation record as verifiable metadata — linking the financial instrument to the proven compliance event. Whitelisted investors and KYC/AML checks enforced at protocol level.</p></div></div>
+        <div class="vls"><div class="vls-dot">04</div><div><h5>Investors deploy capital via DeFi-adjacent pools</h5><p>Token holders deposit into regulated RWA yield pools (yield pegged to the underlying trade) or use tokens as collateral for stablecoin loans. Capital sources include crypto-native funds, private credit and institutional investors — all interacting via tokens, with the underlying asset remaining a classic trade receivable.</p></div></div>
+        <div class="vls"><div class="vls-dot">05</div><div><h5>Smart contract settles on confirmed delivery</h5><p>On final attestation and delivery confirmation, the smart contract releases payment to the exporter automatically. The SPV is settled, the token redeemed, and the importer's working capital freed for the next shipment.</p></div></div>
+      </div>
+
+      <div class="vl-mkt">
+        <div class="vlmk"><div class="vlmk-n"><em>$10T+</em></div><div class="vlmk-l">Global Trade Finance Market</div><div class="vlmk-d">Annual market addressable via RWA tokenisation of regulated trade receivables</div></div>
+        <div class="vlmk"><div class="vlmk-n"><em>$1.7T</em></div><div class="vlmk-l">Annual Trade Finance Gap</div><div class="vlmk-d">Unfinanced trade — SME importers excluded by documentation risk that VeriPura eliminates</div></div>
+        <div class="vlmk"><div class="vlmk-n"><em>€340B+</em></div><div class="vlmk-l">EU + US Food Import SAM</div><div class="vlmk-d">VeriPura's compliance base — the attested receivables that seed VeriLiquid's SPV pipeline</div></div>
+      </div>
+
+      <div class="vl-seed-note">
+        <p><strong>Why seed investors benefit from both acts.</strong> The seed round funds Act 1 operations and early Act 2 architecture. You get the compliance platform upside on current terms — plus a free option on a trade finance business that cannot exist without the data moat being built right now. No future round will offer this entry point.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY NOW -->
+<section class="sec sec--white" id="whynow">
+  <div class="wrap">
+    <div class="eyebrow">Why Now</div>
+    <h2>Three mandates converging.<br><em class="g">2026 is the inflection year.</em></h2>
+    <p class="lead">Regulatory pressure is not a trend — it is a permanent step-up in the cost of cross-border food trade. Every importer sourcing from a low-CPI corridor now faces obligations they cannot currently meet at scale.</p>
+
+    <div class="mandate-grid reveal">
+      <div class="mcard">
+        <div class="mind"><div class="mind-dot mind-dot--live"></div><span style="color:#3CB464;">Live now</span></div>
+        <div class="msub">EUDR · Dec 2026 large operators · Jun 2027 SMEs</div>
+        <h4>EU Deforestation Regulation</h4>
+        <p>Mandatory due diligence for beef, cocoa, coffee, soy, palm oil, rubber and timber. Due Diligence Statement via TRACES before EU/EEA entry. Documentation burden tripling for affected importers.</p>
+      </div>
+      <div class="mcard">
+        <div class="mind"><div class="mind-dot mind-dot--live"></div><span style="color:#3CB464;">Live now</span></div>
+        <div class="msub">US FDA FSMA 204 · Full compliance Jul 2028</div>
+        <h4>FDA Food Traceability Rule</h4>
+        <p>Traceability recordkeeping legally in force. Dual EU/US compliance accounts are VeriPura's highest-ARPA segment — one platform solving both jurisdictions simultaneously.</p>
+      </div>
+      <div class="mcard">
+        <div class="mind"><div class="mind-dot mind-dot--live"></div><span style="color:#3CB464;">Live now</span></div>
+        <div class="msub">EU Farm to Fork · 2026–2027 phased enforcement</div>
+        <h4>EU Farm to Fork</h4>
+        <p>Mandatory origin traceability and digital documentary equivalence for all non-EU food imports. VeriPura is the importer-side attestation layer these regulations require.</p>
+      </div>
+      <div class="mcard">
+        <div class="mind"><div class="mind-dot mind-dot--sig"></div><span style="color:var(--gold);">Demand signal</span></div>
+        <div class="msub">Provisionally applying Feb 2026</div>
+        <h4>EU–Mercosur Agreement</h4>
+        <p>Signed 17 Jan 2026. Import volumes from Brazil, Argentina and Paraguay ramping immediately under new terms. The Brazil-to-EU beef corridor is VeriPura's highest-urgency 2026 segment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKET -->
+<section class="sec sec--pale" id="market">
+  <div class="wrap">
+    <div class="eyebrow">Market Opportunity</div>
+    <h2>A beachhead in food.<br><em class="g">A platform for all regulated imports.</em></h2>
+    <p class="lead">Same problem, same solution, larger TAM — every time we expand to a new regulated import category.</p>
+
+    <div class="mkt-trio reveal">
+      <div class="mbox mbox--tam"><div class="mbox-l">TAM</div><div class="mbox-n"><em>€420B+</em></div><div class="mbox-d">EU food &amp; beverage + US food imports + EU vitamins &amp; supplements — all regulated, all documentation-dependent</div></div>
+      <div class="mbox mbox--sam"><div class="mbox-l">SAM</div><div class="mbox-n">~<em>15,500</em></div><div class="mbox-d">Importers needing compliance automation · EU/EEA, US FSMA and dual-compliance accounts at highest ARPA</div></div>
+      <div class="mbox mbox--som"><div class="mbox-l">SOM · Y5 Target</div><div class="mbox-n"><em>2,610</em></div><div class="mbox-d">Clients · €33.2M net revenue · ACV growing €9.9K → €12.7K</div></div>
+    </div>
+
+    <div class="seg-exp reveal">
+      <div class="seg-exp-hdr">Market Segment Expansion Path — Same Problem, Larger TAM</div>
+      <div class="seg-row"><div class="seg-name">🥩 Food &amp; Beverage</div><div class="seg-note">Beachhead. Brazil-to-EU beef, Vietnamese coffee, Moroccan citrus. EUDR, FSMA 204 and Farm to Fork mandates active now.</div><span class="tag tag--green">● Y1 — Now</span></div>
+      <div class="seg-row"><div class="seg-name">💊 Pharmaceuticals</div><div class="seg-note">Global South manufacturing, high-compliance receiving markets, strict GDP/WHO/EMA documentation obligations. Largest TAM expansion.</div><span class="tag tag--blue">Y3</span></div>
+      <div class="seg-row"><div class="seg-name">💄 Cosmetics</div><div class="seg-note">EU Cosmetics Regulation, US FDA, ingredient origin traceability. Large import volumes from Southeast Asia and LATAM.</div><span class="tag tag--blue">Y3–4</span></div>
+      <div class="seg-row"><div class="seg-name">🌿 Vitamins &amp; Supplements</div><div class="seg-note">Fast-growing import category. Complex ingredient sourcing, multi-jurisdiction labelling obligations, high documentation error rate.</div><span class="tag tag--blue">Y4</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETITIVE -->
+<section class="sec sec--white" id="competitive">
+  <div class="wrap">
+    <div class="eyebrow">Competitive Position</div>
+    <h2>No one combines all four.<br><em class="g">VeriPura does.</em></h2>
+    <div class="comp-wrap reveal">
+      <table class="comp-t">
+        <thead>
+          <tr><th>Solution</th><th>Agentic Compliance</th><th>Blockchain Attestation</th><th>Freight Channel</th><th>Trade Finance Bridge</th></tr>
+        </thead>
+        <tbody>
+          <tr class="vpr"><td>VeriPura + VeriLiquid</td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td></tr>
+          <tr><td>Manual / Consultants</td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td></tr>
+          <tr><td>ERP Modules (SAP / Oracle)</td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td></tr>
+          <tr><td>Point Solutions (doc management)</td><td>Partial</td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td></tr>
+          <tr><td>Web3 Infrastructure (OriginTrail)</td><td><span class="cx">✗</span></td><td>Infrastructure only</td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td></tr>
+          <tr><td>Trade Finance Platforms</td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td>No compliance data</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- TRACTION -->
+<section class="sec sec--pale" id="traction">
+  <div class="wrap">
+    <div class="eyebrow">Traction &amp; Status</div>
+    <h2>Pre-revenue. The platform is built.<br><em class="g">The pipeline is real.</em></h2>
+    <div class="traction-grid reveal">
+      <div class="tr-item"><div class="tr-dot tr-dot--done"></div><div><h4>Working Prototype</h4><p>Live compliance agent demo operational. Core 9-stage workflow — Intake through Ledger — fully demonstrated. Screen recording available for async investor review.</p></div></div>
+      <div class="tr-item"><div class="tr-dot tr-dot--done"></div><div><h4>Institutional-Grade Financial Model</h4><p>Full 5-year model (v5) with primary source data, fully auditable. Available in the data room on request.</p></div></div>
+      <div class="tr-item"><div class="tr-dot tr-dot--active"></div><div><h4>IOTA Foundation Engagement</h4><p>Blockchain attestation layer integration underway. Technical alignment confirmed on document notarisation and verifiable credentials approach.</p></div></div>
+      <div class="tr-item"><div class="tr-dot tr-dot--active"></div><div><h4>TWIN Pilot Corridor</h4><p>Brazil–Great Britain beef corridor in early-stage discussion with IOTA TWIN infrastructure as the first live attestation corridor.</p></div></div>
+      <div class="tr-item"><div class="tr-dot tr-dot--active"></div><div><h4>Freight Partner Pipeline</h4><p>Conversations underway with EU-based freight forwarders. Anchor partner LOI targeted Q2 2026. The partner channel is the primary GTM lever.</p></div></div>
+      <div class="tr-item"><div class="tr-dot tr-dot--active"></div><div><h4>Importer Pilot Candidates</h4><p>First EU food importer pilot candidates identified through founder network. Outreach targeting Dutch and Swiss SME importers sourcing from high-risk corridors.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="sec sec--white" id="team">
+  <div class="wrap">
+    <div class="eyebrow">The Team</div>
+    <h2>Domain expertise.<br><em class="g">Execution track record.</em></h2>
+    <div class="team-grid reveal">
+      <div class="tcard"><div class="tavatar">O</div><h4>Onno Stienen</h4><div class="trole">CEO · Co-founder · Bangkok</div><p>Deep expertise in food supply chain compliance and international trade across Southeast Asia and Europe. Leads product vision and regulatory strategy.</p></div>
+      <div class="tcard"><div class="tavatar">T</div><h4>Thomas Scott Oberlin</h4><div class="trole">COO · Co-founder · Italy</div><p>€14M raised across prior ventures. Grew up in food production — dairy farming, turkey processing, condensed milk manufacturing. Leads fundraising and commercial development. Co-founder of SmartCube, Prematics, OptiGlobe.</p></div>
+      <div class="tcard"><div class="tavatar">J</div><h4>John Wotherspoon</h4><div class="trole">Fractional CTO</div><p>Leads technical architecture including IOTA integration, agentic workflow design and early VeriLiquid smart contract framework development.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINANCIALS -->
+<section class="sec sec--pale" id="financials">
+  <div class="wrap">
+    <div class="eyebrow">Financials</div>
+    <h2>VeriPura standalone.<br><em class="g">VeriLiquid is pure upside.</em></h2>
+    <p class="lead">These numbers model VeriPura compliance revenue only. VeriLiquid is not modelled — it is the option seed investors receive for free.</p>
+
+    <div class="metrics-row reveal">
+      <div class="mbox2"><div class="mbox2-v"><em>€33.2M</em></div><div class="mbox2-l">Y5 Net Revenue</div></div>
+      <div class="mbox2"><div class="mbox2-v"><em>79%</em></div><div class="mbox2-l">Gross Margin Y5</div></div>
+      <div class="mbox2"><div class="mbox2-v"><em>135×</em></div><div class="mbox2-l">LTV : CAC</div></div>
+      <div class="mbox2"><div class="mbox2-v"><em>2.1mo</em></div><div class="mbox2-l">CAC Payback Y3</div></div>
+    </div>
+
+    <div class="fin-grid reveal">
+      <div class="fcard">
+        <h4>Revenue Build — Y1 → Y5</h4>
+        <div class="fbar"><div class="fbh"><span>Y1</span><span>€0.3M</span></div><div class="fbtrack"><div class="fbfill" style="width:1%"></div></div></div>
+        <div class="fbar"><div class="fbh"><span>Y2</span><span>€1.2M</span></div><div class="fbtrack"><div class="fbfill" style="width:4%"></div></div></div>
+        <div class="fbar"><div class="fbh"><span>Y3</span><span>€6.5M</span></div><div class="fbtrack"><div class="fbfill" style="width:20%"></div></div></div>
+        <div class="fbar"><div class="fbh"><span>Y4</span><span>€17.8M</span></div><div class="fbtrack"><div class="fbfill" style="width:54%"></div></div></div>
+        <div class="fbar"><div class="fbh"><span>Y5</span><span>€33.2M</span></div><div class="fbtrack"><div class="fbfill fbfill--gold" style="width:100%"></div></div></div>
+      </div>
+      <div class="fcard">
+        <h4>Unit Economics</h4>
+        <div class="fbar"><div class="fbh"><span>Gross Margin</span><span>79% at Y5</span></div><div class="fbtrack"><div class="fbfill fbfill--green" style="width:79%"></div></div></div>
+        <div class="fbar"><div class="fbh"><span>EBITDA Margin</span><span>33.5% at Y5</span></div><div class="fbtrack"><div class="fbfill" style="width:33.5%"></div></div></div>
+        <div class="fbar"><div class="fbh"><span>Net Revenue Retention</span><span>110–118%</span></div><div class="fbtrack"><div class="fbfill fbfill--gold" style="width:100%"></div></div></div>
+        <div class="fbar"><div class="fbh"><span>ARR per FTE</span><span>€226K</span></div><div class="fbtrack"><div class="fbfill" style="width:60%"></div></div></div>
+        <div style="margin-top:1.1rem;padding:.9rem 1rem;background:var(--pale);border-radius:4px;font-size:.82rem;color:var(--muted);">Revenue mix: ~80% subscription (€199–€899/month) + ~20% per-shipment attestation (€15–€280). ACV growing €9.9K → €12.7K.</div>
+      </div>
+
+      <div class="vl-upside">
+        <div class="vl-up-lbl">VeriLiquid Upside</div>
+        <p>These financials model <strong>zero VeriLiquid revenue.</strong> The trade finance layer is the option seed investors receive at no additional cost. A 1% penetration of the EU food import financing market alone would represent a business larger than the entire VeriPura compliance platform at Y5.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:2.5rem;">
+      <p style="font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;">Comparable Exits at VeriPura's Y5 Profile (€33.2M ARR · 79% GM · 33% EBITDA)</p>
+      <div class="comp-wrap reveal">
+        <table class="comp-t">
+          <thead><tr><th>Company</th><th>Category</th><th>Exit Multiple</th></tr></thead>
+          <tbody>
+            <tr><td>Veeva Systems</td><td>Life sciences compliance</td><td>10–14× ARR</td></tr>
+            <tr><td>project44</td><td>Agentic supply chain visibility</td><td>12–18× ARR</td></tr>
+            <tr><td>TraceLink</td><td>Pharma supply chain compliance</td><td>7–10× ARR</td></tr>
+            <tr><td>Descartes Systems</td><td>Logistics compliance</td><td>8–12× ARR</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEEDS -->
+<section class="sec sec--white" id="proceeds">
+  <div class="wrap">
+    <div class="eyebrow">Use of Proceeds</div>
+    <h2>€750K across product,<br><em class="g">team and architecture.</em></h2>
+    <div class="proceeds-grid reveal">
+      <div class="pcard"><div class="ppct"><em>27%</em></div><div class="plab">Product &amp; Tech</div><p>Agentic workflow architecture, IOTA integration, cloud infrastructure, SOC 2 compliance. €200K.</p></div>
+      <div class="pcard"><div class="ppct"><em>24%</em></div><div class="plab">Key Hires</div><p>Compliance engineer, GTM lead, early VeriLiquid smart contract architect. €180K.</p></div>
+      <div class="pcard"><div class="ppct"><em>17%</em></div><div class="plab">Go-to-Market</div><p>Freight partner outreach, anchor LOI, first 28 importer clients. €125K.</p></div>
+      <div class="pcard"><div class="ppct"><em>12%</em></div><div class="plab">VeriLiquid Architecture</div><p>IOTA tokenisation layer, smart contract framework, EU/UK/US trade finance regulatory mapping. €90K.</p></div>
+      <div class="pcard"><div class="ppct"><em>7%</em></div><div class="plab">Legal &amp; Regulatory</div><p>EU, UK and US regulatory mapping, data protection, tokenisation legal framework. €55K.</p></div>
+      <div class="pcard"><div class="ppct"><em>13%</em></div><div class="plab">Operations &amp; Contingency</div><p>18-month runway management, Series A preparation, reserve. €100K.</p></div>
+    </div>
+    <div style="margin-top:1.75rem;padding:1.25rem 1.5rem;background:var(--pale);border-left:3px solid var(--gold);border-radius:0 4px 4px 0;">
+      <p style="font-size:.88rem;color:var(--muted);"><strong style="color:var(--navy);">18-month sprint to Series A readiness.</strong> Monthly burn: €46K (Y1) → €55K (Y2). Target: €1.24M ARR at Series A, anchor freight partner signed, first 28 clients live, early VeriLiquid architecture complete.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INFRA NOTE -->
+<div class="infra-band">
+  <div class="wrap">
+    <div class="infra-inner">
+      <div class="infra-txt">
+        <h5>Data Residency &amp; Compliance Infrastructure</h5>
+        <p>VeriPura is deployed on distributed cloud architecture across platforms certified under EU GDPR, UK Data Protection Act 2018, and US FedRAMP frameworks. Customer data never leaves its regulated jurisdiction.</p>
+      </div>
+      <div>
+        <p style="font-family:var(--mono);font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.45rem;">Hosted on platforms including</p>
+        <div class="cert-row">
+          <span class="cert">AWS ISO 27001</span>
+          <span class="cert">AWS SOC 2 Type II</span>
+          <span class="cert">Google Cloud ISO 27001</span>
+          <span class="cert">Azure ISO 27001</span>
+          <span class="cert">GDPR</span>
+          <span class="cert">UK DPA 2018</span>
+          <span class="cert">FedRAMP</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INVEST -->
+<section class="invest-sec" id="invest">
+  <div class="wrap">
+    <div class="eyebrow light" style="justify-content:center;">Seed Round · March 2026</div>
+    <h2 style="margin-top:.5rem;">Invest in the trust layer.<br><em class="g">Own a piece of the money layer.</em></h2>
+    <p>Pre-revenue. Platform built. Regulatory mandate live. Pipeline real. This is the only entry point before Series A.</p>
+    <div class="invest-terms">
+      <div class="it"><div class="it-l">Instrument</div><div class="it-v"><em>SAFE</em></div></div>
+      <div class="it"><div class="it-l">Raise</div><div class="it-v">€<em>750K</em></div></div>
+      <div class="it"><div class="it-l">Valuation Cap</div><div class="it-v">€<em>3.75M</em></div></div>
+    </div>
+    <div class="invest-btns">
+      <a class="btn btn--gold" href="/cdn-cgi/l/email-protection#345d5a42514740744251465d444146551a575b59">Request Data Room</a>
+      <a class="btn btn--outline" href="/cdn-cgi/l/email-protection#5d34332b382e291d2b382f342d282f3c733e3230">Schedule a Call</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="ft-inner">
+      <div class="ft-logo">Veri<em>Pura</em></div>
+      <div class="ft-note">Confidential · Seed Stage · March 2026 · Not an offer of securities</div>
+    </div>
+  </div>
+</footer>
+
+<!-- HIW OVERLAY + PANEL -->
+<div class="hiw-overlay" id="hiw-overlay" onclick="hiwClose()"></div>
+<div class="hiw-panel" id="hiw-panel">
+  <div class="hiw-phead">
+    <div>
+      <div class="hiw-pstage" id="hiw-pstage"></div>
+      <div class="hiw-ptitle" id="hiw-ptitle"></div>
+      <div class="hiw-psub"   id="hiw-psub"></div>
+    </div>
+    <button class="hiw-pclose" onclick="hiwClose()">✕</button>
+  </div>
+  <div class="hiw-pbody" id="hiw-pbody"></div>
+  <div class="hiw-pnav">
+    <button class="hiw-pnav-btn" id="hiw-prev" onclick="hiwNav(-1)">← Previous</button>
+    <button class="hiw-pnav-btn" id="hiw-next" onclick="hiwNav(1)">Next →</button>
+  </div>
+</div>
+
+<script>
+// SCROLL REVEAL
+const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){x.target.classList.add('in');obs.unobserve(x.target);} }), {threshold:.07});
+document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+
+// ── HOW IT WORKS ──────────────────────────────────────
+const HIW_PHASES = [
+  { id:'origin',        label:'Origin & Processing',  color:'#1a6b4a', lt:'#d4ede3' },
+  { id:'predeparture',  label:'Pre-Departure',         color:'#0f5a8a', lt:'#d0e6f5' },
+  { id:'transit',       label:'Transit & Crossing',    color:'#6b3fa0', lt:'#e8dff5' },
+  { id:'entry',         label:'UK Entry & Clearance',  color:'#b84c00', lt:'#fae8d8' },
+];
+const HIW_ICONS = ['📋','🔬','📄','🩺','🚛','🛃','⛴️','🏛️','✅','📦'];
+const HIW_PC = {
+  origin:       { color:'#1a6b4a', lt:'#d4ede3' },
+  predeparture: { color:'#0f5a8a', lt:'#d0e6f5' },
+  transit:      { color:'#6b3fa0', lt:'#e8dff5' },
+  entry:        { color:'#b84c00', lt:'#fae8d8' },
+};
+const HIW_STAGES = [
+  { phase:'origin', num:1, label:'Pre-Order Assessment', sub:'Establishment & product eligibility checks', actors:['Consignee (Buyer)','Consignor (Seller)'], before:'Importer manually checks DEFRA spreadsheets, emails APHA for confirmation, and relies on memory for RASFF alerts. Process takes 2–5 days and is frequently incomplete.', after:'VeriPura runs all checks in under 60 seconds against live databases. A go/no-go verdict is issued before the purchase order is placed. TWIN notarises the result.', timeBefore:'2–5 days', timeAfter:'< 60 seconds', docs:[{name:'Purchase Order',src:'Consignee / Buyer',req:true},{name:'DEFRA Approved Establishment Register',src:'DEFRA live database',req:true},{name:'SIF Number Verification',src:'APHA / DEFRA',req:true},{name:'RASFF Suspension Check',src:'EU/UK Rapid Alert System for Food & Feed',req:true}], vp:['Automated live check against DEFRA approved establishment register','Confirms SIF (Specific Import Conditions) number is active and product category approved','Scans APHA topical issues for current suspensions or RASFF alerts','Flags any eligibility issues before order is placed — preventing downstream delays'], twin:['Establishment eligibility check result notarised on IOTA ledger with timestamp','Creates immutable audit trail of pre-order compliance status'] },
+  { phase:'origin', num:2, label:'Product Assessment', sub:'Specification mapping & SISBOV segregation', actors:['Consignor (Seller)','Processors'], before:'Product specs compared manually against UK requirements. SISBOV status checked via Brazilian government portal — often slow or unavailable. Discrepancies found at the border.', after:'VeriPura maps specifications to regulatory requirements in real time. SISBOV segregation confirmed digitally. Issues caught before production, not at the port.', timeBefore:'3–7 days', timeAfter:'< 2 hours', docs:[{name:'Product Specification Sheet',src:'Processor / Exporter',req:true},{name:'Letter of Credit',src:"Buyer's Bank",req:true},{name:'SISBOV Certificate',src:'Brazilian Ministry of Agriculture (MAPA)',req:true},{name:'Cutting & Preparation Records',src:'Processor',req:true}], vp:['Maps product specification against UK import regulatory requirements automatically','Validates SISBOV segregation — confirming beef is from SISBOV-registered herds approved for EU/UK export','Cross-references product category against permitted cuts and processing methods','Identifies specification gaps before production begins'], twin:['Product specification and SISBOV verification notarised as a digital credential','Processor identity anchored via IOTA DID (Decentralised Identifier)'] },
+  { phase:'predeparture', num:3, label:'Commercial & Export Docs', sub:'Invoices, packing lists & export licensing', actors:['Consignor (Seller)','Processors'], before:'Customs brokers manually check invoices against packing lists. HS code errors are common. Export licence validity checked by phone or email with Brazilian authorities.', after:'VeriPura validates the full commercial document set in minutes. Document hashes are notarised so any alteration is cryptographically detectable downstream.', timeBefore:'1–3 days', timeAfter:'< 30 minutes', docs:[{name:'Commercial Invoice',src:'Consignor / Seller',req:true},{name:'Packing List',src:'Consignor / Seller',req:true},{name:'Consignment Information',src:'Consignor / Freight Forwarder',req:true},{name:'Export Licence (Brazil MAPA)',src:'Brazilian Ministry of Agriculture',req:true}], vp:['Ingests commercial invoice and packing list via document upload or API','Validates all fields against consignment data — catches mismatches in weight, product codes, HS codes','Confirms export licence validity and product category alignment','Flags discrepancies between commercial docs and regulatory declarations'], twin:['Commercial document hash notarised — any subsequent tampering is detectable','Document set linked to consignment DID on IOTA ledger'] },
+  { phase:'predeparture', num:4, label:'Official Vet Inspection', sub:'Health certification & ante/post-mortem records', actors:['Official Vet','Consignor (Seller)'], before:'EHCs arrive as PDFs or paper. APHA inspectors manually verify OV credentials with Brazilian authorities — a process that can take days and relies on email. Forgeries have occurred.', after:'VeriPura validates the EHC structure and OV credentials automatically. TWIN issues a verifiable credential. Border inspectors scan a QR code to confirm authenticity instantly.', timeBefore:'2–5 days (credential verification alone)', timeAfter:'Instant at border — credential pre-verified', docs:[{name:'Export Health Certificate (EHC)',src:'Official Veterinarian (OV) — MAPA Brazil',req:true},{name:'Ante-Mortem Inspection Record',src:'Official Veterinarian',req:true},{name:'Post-Mortem Inspection Record',src:'Official Veterinarian',req:true},{name:'New Brazil Health Certificate (NBHC)',src:'MAPA / Official Vet',req:true},{name:'Residue Testing Results',src:'MAPA Accredited Laboratory',req:true}], vp:['Validates EHC structure against current APHA-approved template','Checks OV credentials and signing authority against MAPA registry','Cross-references residue test results against UK Maximum Residue Levels (MRL)','Confirms NBHC meets current GB import requirements post-Brexit'], twin:['EHC and OV credentials notarised as verifiable credentials on IOTA','APHA border inspectors can verify authenticity without contacting Brazilian authorities'] },
+  { phase:'predeparture', num:5, label:'Loading & Dispatch', sub:'Haulier assignment, sealing & temperature records', actors:['Haulier','Consignor (Seller)','Official Vet'], before:'Loading records are paper-based. Temperature logs are PDFs from cold stores. Seal numbers recorded manually. Discrepancies between loading records and border arrival are common.', after:'Loading data flows into VeriPura automatically. TWIN notarises seal numbers and temperature ranges. Any discrepancy between dispatch and arrival is immediately flagged.', timeBefore:'Manual, error-prone', timeAfter:'Automated, tamper-evident', docs:[{name:'Transport Protocol (Road-ARIZ)',src:'Haulier / Consignor',req:true},{name:'Vehicle Sealing Record',src:'Official Vet / Customs',req:true},{name:'Temperature Log (pre-loading)',src:'Cold Store / Haulier',req:true},{name:'CMR Waybill',src:'Haulier',req:true}], vp:['Validates transport protocol against APHA cold chain requirements','Confirms container/vehicle registration and approved transporter status','Ingests temperature data from cold store IoT sensors where available','Generates loading compliance summary linked to consignment record'], twin:['Seal number, vehicle ID and temperature records notarised at point of loading','Any cold chain break detected in transit is recorded immutably'] },
+  { phase:'transit', num:6, label:'Port of Exit', sub:'EU exit customs & manifest filing', actors:['Customs Brokers','Ports & Carriers','Haulier'], before:'Customs broker compiles export declaration manually from multiple document sources. Errors in HS codes or declared values cause delays or rejection at UK entry.', after:'VeriPura pre-validates the export declaration against the full document set already on record. Errors are caught before the vessel or truck departs.', timeBefore:'4–8 hours (compilation + correction cycles)', timeAfter:'< 1 hour (pre-validated)', docs:[{name:'Export Declaration (EX-A)',src:'Customs Broker / Exporter',req:true},{name:'Bill of Lading (Sea) / CMR (Road)',src:'Carrier',req:true},{name:'Customs Status Document',src:'Customs Authority',req:true}], vp:['Pre-validates export declaration data against commercial document set','Confirms HS codes, declared values and product descriptions are consistent','Generates pre-departure summary for UK IPAFFS pre-notification'], twin:['Bill of Lading / CMR reference notarised and linked to consignment DID','Creates immutable departure event on IOTA ledger'] },
+  { phase:'transit', num:7, label:'Deep-Sea Transit', sub:'Container vessel monitoring', actors:['Ports & Carriers','Haulier'], before:'Importers manually track vessel ETAs and update IPAFFS notifications by hand. Late notifications result in consignment holds. Temperature data from reefer containers is rarely captured.', after:'VeriPura integrates with carrier APIs to track the consignment in real time. IPAFFS notifications update automatically. TWIN logs each transit event immutably.', timeBefore:'Manual tracking, frequent late notifications', timeAfter:'Automated, real-time, proactive', docs:[{name:'Vessel Manifest',src:'Shipping Line / Ferry Operator',req:true},{name:'Transit Temperature Records',src:'Reefer Container / IoT',req:false},{name:'Arrival Notification to IPAFFS',src:'Importer / Agent via IPAFFS',req:true}], vp:['Monitors vessel ETA via carrier API and updates IPAFFS pre-notification automatically','Flags any route deviations or delay that may affect cold chain compliance','Prepares UK border notification package in advance of arrival'], twin:['Transit events (departure, crossing, estimated arrival) anchored on IOTA ledger','Cold chain data from reefer containers logged immutably if connected'] },
+  { phase:'entry', num:8, label:'Port of Entry', sub:'IPAFFS check, APHA documentary & identity checks', actors:['Border Agencies & Health Auth.','Customs Brokers','Ports & Carriers'], before:'APHA inspectors manually verify a paper/PDF document pack. EHC authenticity checked by contacting Brazilian authorities. Average documentary check: 4–6 hours.', after:'Inspector scans QR code. All documents pre-validated, EHC credentials pre-verified via TWIN. Documentary check reduced to minutes.', timeBefore:'4–6 hours documentary + physical queue', timeAfter:'< 20 minutes documentary', docs:[{name:'IPAFFS Pre-Notification',src:'Importer / Agent via IPAFFS',req:true},{name:'Import Declaration (H1)',src:'Customs Broker via CDS',req:true},{name:'Common Health Entry Document (CHED-P)',src:'APHA Border Inspector',req:true},{name:'Seal Integrity Confirmation',src:'Border Force / APHA',req:true}], vp:['Supplies APHA inspector with pre-validated document summary — all checks already run','QR code on consignment links to full VeriPura compliance record and TWIN-notarised credentials','Flags any open issues or discrepancies before inspector begins physical check','CHED-P completion supported with pre-populated data from consignment record'], twin:['APHA inspector verifies TWIN verifiable credentials via QR code — no contact with Brazil required','Border clearance event recorded on IOTA ledger, completing the compliance chain','Full audit trail from Brazilian farm to UK border available in single scan'] },
+  { phase:'entry', num:9, label:'UK Customs & Release', sub:'Customs Duty, VAT, tariff classification & release', actors:['Customs Brokers','Border Agencies & Health Auth.'], before:'Customs broker compiles duty calculations manually. Tariff classification errors are common and result in under/over-payment and potential penalties. Clearance takes 24–48 hours.', after:'VeriPura pre-validates tariff classification and duty calculations. Customs broker submits with confidence. TWIN notarises the release event.', timeBefore:'24–48 hours', timeAfter:'2–4 hours', docs:[{name:'Import Declaration (H1) — Finalised',src:'Customs Broker via CDS',req:true},{name:'Customs Duty & VAT Calculation',src:'HMRC / CDS',req:true},{name:'Tariff Classification Evidence',src:'Importer / Broker',req:true},{name:'Phytosanitary / Residue Clearance',src:'APHA',req:false}], vp:['Validates tariff classification against commodity code and product description','Confirms duty rate and VAT treatment against HMRC Trade Tariff','Supplies customs broker with pre-validated data package for CDS submission','Generates post-clearance compliance summary for importer records'], twin:['Customs clearance event notarised on IOTA — completing the end-to-end compliance chain','Immutable record from Brazilian establishment to UK release — available for audit at any point'] },
+  { phase:'entry', num:10, label:'Goods-In & Delivery', sub:'Final delivery, inventory acceptance & traceability', actors:['Consignee (Buyer)'], before:'Delivery is the end of the process — no connection back to the compliance documentation. If a retailer or regulator queries provenance months later, manual records must be assembled from multiple parties.', after:'A single TWIN-notarised chain connects the Brazilian herd to the UK warehouse. Any downstream query — retailer audit, APHA investigation, consumer recall — is resolved with one scan.', timeBefore:'Days to weeks to reconstruct audit trail', timeAfter:'Instant — single QR code', docs:[{name:'Delivery Note',src:'Haulier / Logistics',req:true},{name:'Goods Receipt Confirmation',src:'Consignee / Buyer',req:true},{name:'Final Temperature Record',src:'Haulier / Cold Store',req:true},{name:'Exchange Bill of Lading (Consignee Copy)',src:'Shipping Line / Agent',req:true}], vp:['Goods receipt triggers final VeriPura compliance record closure','Temperature records at delivery compared against cold chain requirements','Full end-to-end compliance certificate issued and archived','Consignment data available for retailer / downstream traceability queries'], twin:['Delivery confirmation notarised — full IOTA chain from Brazilian farm to UK warehouse complete','Compliance record permanently accessible for retailer audits, regulatory queries, or dispute resolution'] },
+];
+
+// Build legend
+const legendEl = document.getElementById('hiw-legend');
+if (legendEl) {
+  HIW_PHASES.forEach(p => {
+    legendEl.innerHTML += `<div class="hiw-legend-item"><div class="hiw-legend-dot" style="border-color:${p.color};background:${p.lt}"></div>${p.label}</div>`;
+  });
+}
+
+// Build nodes
+const hiwRow = document.getElementById('hiw-stages-row');
+if (hiwRow) {
+  HIW_STAGES.forEach((s, idx) => {
+    const pc = HIW_PC[s.phase];
+    const node = document.createElement('div');
+    node.className = 'hiw-node';
+    node.id = `hiw-sn-${idx}`;
+    node.innerHTML = `<div class="hiw-circle" style="border-color:${pc.color}"><span class="hiw-num" style="color:${pc.color}">S${s.num}</span><span class="hiw-icon">${HIW_ICONS[idx]}</span></div><div class="hiw-label">${s.label}</div>`;
+    node.onclick = () => hiwOpen(idx);
+    hiwRow.appendChild(node);
+  });
+}
+
+let hiwActive = null;
+
+function hiwOpen(idx) {
+  const s = HIW_STAGES[idx];
+  const pc = HIW_PC[s.phase];
+  hiwActive = idx;
+  document.querySelectorAll('.hiw-node').forEach((n,i) => n.classList.toggle('active', i===idx));
+  const pf = document.getElementById('hiw-progress-fill');
+  if(pf) pf.style.width = `${((idx+1)/HIW_STAGES.length)*100}%`;
+  const phaseLabel = HIW_PHASES.find(p=>p.id===s.phase).label;
+  document.getElementById('hiw-pstage').innerHTML = `<span style="color:${pc.color}">Stage ${s.num} of ${HIW_STAGES.length} — ${phaseLabel}</span>`;
+  document.getElementById('hiw-ptitle').textContent = s.label;
+  document.getElementById('hiw-psub').textContent = s.sub;
+  document.getElementById('hiw-prev').disabled = idx===0;
+  document.getElementById('hiw-next').disabled = idx===HIW_STAGES.length-1;
+  const body = document.getElementById('hiw-pbody');
+  body.innerHTML = '';
+
+  // Before/After
+  const ba = document.createElement('div');
+  ba.innerHTML = `<div class="hiw-sectitle">Before vs. After VeriPura × TWIN</div>
+    <div class="hiw-ba">
+      <div class="hiw-ba-card before"><div class="hiw-ba-lbl">⚠ Before</div><div class="hiw-ba-text">${s.before}</div><div class="hiw-ba-time">⏱ ${s.timeBefore}</div></div>
+      <div class="hiw-ba-card after"><div class="hiw-ba-lbl">✓ After</div><div class="hiw-ba-text">${s.after}</div><div class="hiw-ba-time">⚡ ${s.timeAfter}</div></div>
+    </div>`;
+  body.appendChild(ba);
+
+  // Docs
+  const docsDiv = document.createElement('div');
+  docsDiv.innerHTML = `<div class="hiw-sectitle">Documents Required</div><div class="hiw-docs">${s.docs.map(d=>`<div class="hiw-doc"><div class="hiw-doc-dot ${d.req?'req':''}"></div><div><div class="hiw-doc-name">${d.name}</div><div class="hiw-doc-src">Source: ${d.src}</div></div></div>`).join('')}</div>`;
+  body.appendChild(docsDiv);
+
+  // VeriPura
+  const vpDiv = document.createElement('div');
+  vpDiv.innerHTML = `<div class="hiw-sectitle" style="color:#1a6b4a">VeriPura Automates</div><div class="hiw-vp-list">${s.vp.map(v=>`<div class="hiw-vp-item"><span class="hiw-vp-tick">✓</span><span>${v}</span></div>`).join('')}</div>`;
+  body.appendChild(vpDiv);
+
+  // TWIN
+  const twinDiv = document.createElement('div');
+  twinDiv.innerHTML = `<div class="hiw-sectitle">Notarised on IOTA</div><div class="hiw-twin"><div class="hiw-twin-hdr"><div class="hiw-twin-pulse"></div>IOTA Ledger — Immutable Record</div><div class="hiw-twin-list">${s.twin.map(t=>`<div class="hiw-twin-item"><span class="hiw-twin-arr">▸</span><span>${t}</span></div>`).join('')}</div></div>`;
+  body.appendChild(twinDiv);
+
+  // Actors
+  if(s.actors && s.actors.length) {
+    const actDiv = document.createElement('div');
+    actDiv.innerHTML = `<div class="hiw-sectitle">Actors Involved</div><div class="hiw-actors-row">${s.actors.map(a=>`<span class="hiw-actor" style="border-color:${pc.color};color:${pc.color};background:${pc.lt}">${a}</span>`).join('')}</div>`;
+    body.appendChild(actDiv);
+  }
+
+  document.getElementById('hiw-overlay').classList.add('open');
+  document.getElementById('hiw-panel').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  body.scrollTop = 0;
+}
+
+function hiwClose() {
+  document.getElementById('hiw-overlay').classList.remove('open');
+  document.getElementById('hiw-panel').classList.remove('open');
+  document.body.style.overflow = '';
+  document.querySelectorAll('.hiw-node').forEach(n=>n.classList.remove('active'));
+  hiwActive = null;
+}
+
+function hiwNav(dir) {
+  if(hiwActive===null) return;
+  const next = hiwActive + dir;
+  if(next>=0 && next<HIW_STAGES.length) { hiwOpen(next); document.getElementById('hiw-pbody').scrollTop=0; }
+}
+
+// ── FLYWHEEL SVG ──────────────────────────────────────
+(function() {
+  const ring = document.getElementById('fw-ring');
+  if (!ring) return;
+  const NS='http://www.w3.org/2000/svg';
+  const CX=270,CY=270,RO=248,RI=112,RMID=(RO+RI)/2,GAP=5,N=6;
+  const SEG=[
+    { grad:'fw-g0', text:'#D4A847',  label:'VeriPura'              },
+    { grad:'fw-g1', text:'#c8d8f0',  label:'Trust'                 },
+    { grad:'fw-g2', text:'#ffffff',  label:'Risk Reduction'        },
+    { grad:'fw-g3', text:'#0F2444',  label:'VeriLiquid'            },
+    { grad:'fw-g4', text:'#a8e8c8',  label:'Lower Cost of Capital' },
+    { grad:'fw-g5', text:'#ffffff',  label:'Expanded Trade'        },
+  ];
+  function rad(d){return d*Math.PI/180;}
+  function pt(r,deg){const a=rad(deg-90);return[CX+r*Math.cos(a),CY+r*Math.sin(a)];}
+  function f(n){return n.toFixed(3);}
+  const defs=document.querySelector('#fw-svg defs');
+  const segDeg=360/N;
+  SEG.forEach((s,i)=>{
+    const a0=i*segDeg+GAP/2, a1=(i+1)*segDeg-GAP/2, la=(a1-a0)>180?1:0;
+    const[ox0,oy0]=pt(RO,a0),[ox1,oy1]=pt(RO,a1);
+    const[ix0,iy0]=pt(RI,a0),[ix1,iy1]=pt(RI,a1);
+    const[tx,ty]=pt((RO+RI)/2,a1+4.2);
+    const d=`M${f(ox0)},${f(oy0)} A${RO},${RO},0,${la},1,${f(ox1)},${f(oy1)} L${f(tx)},${f(ty)} L${f(ix1)},${f(iy1)} A${RI},${RI},0,${la},0,${f(ix0)},${f(iy0)} Z`;
+    const path=document.createElementNS(NS,'path');
+    path.setAttribute('d',d); path.setAttribute('fill',`url(#${s.grad})`); path.setAttribute('filter','url(#fw-ds)');
+    ring.appendChild(path);
+    const bevel=document.createElementNS(NS,'path');
+    bevel.setAttribute('d',d); bevel.setAttribute('fill','none'); bevel.setAttribute('stroke','rgba(255,255,255,0.13)'); bevel.setAttribute('stroke-width','1.5');
+    ring.appendChild(bevel);
+    const[oe0x,oe0y]=pt(RO-1,a0+0.5),[oe1x,oe1y]=pt(RO-1,a1-0.5);
+    const outerAcc=document.createElementNS(NS,'path');
+    outerAcc.setAttribute('d',`M${f(oe0x)},${f(oe0y)} A${RO-1},${RO-1},0,${la},1,${f(oe1x)},${f(oe1y)}`);
+    outerAcc.setAttribute('fill','none'); outerAcc.setAttribute('stroke','rgba(255,255,255,0.2)'); outerAcc.setAttribute('stroke-width','1.5'); outerAcc.setAttribute('stroke-linecap','round');
+    ring.appendChild(outerAcc);
+    const[ts0x,ts0y]=pt(RMID,a0),[ts1x,ts1y]=pt(RMID,a1-4);
+    const arcId=`fw-arc${i}`;
+    const arcPath=document.createElementNS(NS,'path');
+    arcPath.setAttribute('id',arcId); arcPath.setAttribute('d',`M${f(ts0x)},${f(ts0y)} A${RMID},${RMID},0,${la},1,${f(ts1x)},${f(ts1y)}`);
+    defs.appendChild(arcPath);
+    const textEl=document.createElementNS(NS,'text');
+    textEl.setAttribute('font-family','DM Serif Display,serif'); textEl.setAttribute('font-size','15'); textEl.setAttribute('font-weight','400'); textEl.setAttribute('fill',s.text); textEl.setAttribute('text-anchor','middle');
+    const tp=document.createElementNS(NS,'textPath');
+    tp.setAttribute('href',`#${arcId}`); tp.setAttribute('startOffset','50%'); tp.textContent=s.label;
+    textEl.appendChild(tp); ring.appendChild(textEl);
+  });
+  let angle=0, raf=null;
+  function tick(){ angle+=0.09; ring.setAttribute('transform',`rotate(${angle},${CX},${CY})`); raf=requestAnimationFrame(tick); }
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting){if(!raf)tick();} else{cancelAnimationFrame(raf);raf=null;} });
+  },{threshold:0.1});
+  io.observe(document.getElementById('fw-svg'));
+  tick();
+})();
+
+// ── RISK CURVE CANVAS ─────────────────────────────────
+(function() {
+  const canvas = document.getElementById('risk-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = 420, H = 320;
+
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width  = W * dpr;
+  canvas.height = H * dpr;
+  ctx.scale(dpr, dpr);
+
+  const PAD = { top: 28, right: 28, bottom: 52, left: 62 };
+  const PW = W - PAD.left - PAD.right;
+  const PH = H - PAD.top  - PAD.bottom;
+
+  // Map data coords [0–1] to canvas
+  function px(x) { return PAD.left + x * PW; }
+  function py(y) { return PAD.top  + (1 - y) * PH; }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    // ── Background ──
+    ctx.fillStyle = '#0F2444';
+    ctx.fillRect(0, 0, W, H);
+
+    // ── Grid lines ──
+    ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+    ctx.lineWidth = 1;
+    for (let i = 1; i <= 4; i++) {
+      const y = py(i/5 + 0.1);
+      ctx.beginPath();
+      ctx.moveTo(PAD.left, y);
+      ctx.lineTo(PAD.left + PW, y);
+      ctx.stroke();
+    }
+
+    // ── Axes ──
+    ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(PAD.left, PAD.top);
+    ctx.lineTo(PAD.left, PAD.top + PH);
+    ctx.lineTo(PAD.left + PW, PAD.top + PH);
+    ctx.stroke();
+
+    // ── Axis labels ──
+    ctx.font = `400 9px 'DM Mono', monospace`;
+    ctx.fillStyle = 'rgba(255,255,255,0.35)';
+    ctx.textAlign = 'center';
+    ctx.fillText('DOCUMENTATION RISK →', PAD.left + PW/2, H - 8);
+
+    ctx.save();
+    ctx.translate(14, PAD.top + PH/2);
+    ctx.rotate(-Math.PI/2);
+    ctx.fillText('FINANCING COST →', 0, 0);
+    ctx.restore();
+
+    // ── Y-axis tick labels ──
+    ctx.textAlign = 'right';
+    ctx.fillStyle = 'rgba(255,255,255,0.28)';
+    ctx.font = `400 8px 'DM Mono', monospace`;
+    const yLabels = ['Excluded', 'High', 'Mid', 'Low'];
+    yLabels.forEach((lbl, i) => {
+      const y = py(0.15 + i * 0.26);
+      ctx.fillText(lbl, PAD.left - 8, y + 3);
+    });
+
+    // ── Risk curve (unattested) — high, exponential-ish ──
+    ctx.beginPath();
+    const curvePoints = [];
+    for (let t = 0; t <= 1; t += 0.01) {
+      // Exponential curve: low risk = low cost, high risk = excluded
+      const cost = 0.08 + 0.85 * Math.pow(t, 1.6);
+      curvePoints.push({ t, cost });
+      if (t === 0) ctx.moveTo(px(t), py(cost));
+      else ctx.lineTo(px(t), py(cost));
+    }
+    ctx.strokeStyle = 'rgba(200,80,74,0.55)';
+    ctx.lineWidth = 2;
+    ctx.setLineDash([]);
+    ctx.stroke();
+
+    // Fill under curve
+    ctx.beginPath();
+    curvePoints.forEach(({t, cost}, i) => {
+      if (i === 0) ctx.moveTo(px(t), py(cost));
+      else ctx.lineTo(px(t), py(cost));
+    });
+    ctx.lineTo(px(1), py(0));
+    ctx.lineTo(px(0), py(0));
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(200,80,74,0.06)';
+    ctx.fill();
+
+    // ── Exclusion zone (top right) ──
+    const exX = px(0.72);
+    ctx.fillStyle = 'rgba(200,80,74,0.1)';
+    ctx.fillRect(exX, PAD.top, PW - (exX - PAD.left), PH);
+    ctx.font = `500 8.5px 'DM Mono', monospace`;
+    ctx.fillStyle = 'rgba(200,80,74,0.7)';
+    ctx.textAlign = 'center';
+    ctx.fillText('EXCLUDED', exX + (PAD.left + PW - exX)/2, PAD.top + 14);
+    ctx.font = `400 7.5px 'DM Mono', monospace`;
+    ctx.fillStyle = 'rgba(200,80,74,0.45)';
+    ctx.fillText('No lender will price', exX + (PAD.left + PW - exX)/2, PAD.top + 26);
+    ctx.fillText('this corridor', exX + (PAD.left + PW - exX)/2, PAD.top + 37);
+
+    // ── Attested curve — lower, flatter ──
+    const attestedPoints = [];
+    ctx.beginPath();
+    for (let t = 0; t <= 0.88; t += 0.01) {
+      const cost = 0.06 + 0.38 * Math.pow(t, 1.4);
+      attestedPoints.push({ t, cost });
+      if (t === 0) ctx.moveTo(px(t), py(cost));
+      else ctx.lineTo(px(t), py(cost));
+    }
+    ctx.strokeStyle = 'rgba(60,180,100,0.85)';
+    ctx.lineWidth = 2.5;
+    ctx.stroke();
+
+    // ── VeriLiquid corridor (gap between curves) ──
+    // Fill the gap area
+    ctx.beginPath();
+    // Walk attested curve forward
+    for (let t = 0; t <= 0.88; t += 0.01) {
+      const cost = 0.06 + 0.38 * Math.pow(t, 1.4);
+      if (t === 0) ctx.moveTo(px(t), py(cost));
+      else ctx.lineTo(px(t), py(cost));
+    }
+    // Walk unattested curve backward
+    for (let t = 0.88; t >= 0; t -= 0.01) {
+      const cost = 0.08 + 0.85 * Math.pow(t, 1.6);
+      ctx.lineTo(px(t), py(cost));
+    }
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(212,168,71,0.09)';
+    ctx.fill();
+
+    // VeriLiquid corridor border
+    ctx.beginPath();
+    ctx.moveTo(px(0.15), py(0.06 + 0.38 * Math.pow(0.15, 1.4)));
+    ctx.lineTo(px(0.15), py(0.08 + 0.85 * Math.pow(0.15, 1.6)));
+    ctx.strokeStyle = 'rgba(212,168,71,0.5)';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([3, 4]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Brace label
+    const braceX = px(0.44);
+    const braceY1 = py(0.06 + 0.38 * Math.pow(0.44, 1.4));
+    const braceY2 = py(0.08 + 0.85 * Math.pow(0.44, 1.6));
+    ctx.font = `500 8.5px 'DM Mono', monospace`;
+    ctx.fillStyle = 'rgba(212,168,71,0.85)';
+    ctx.textAlign = 'left';
+    ctx.fillText('VeriLiquid', braceX + 8, (braceY1 + braceY2)/2 - 5);
+    ctx.font = `400 7.5px 'DM Mono', monospace`;
+    ctx.fillStyle = 'rgba(212,168,71,0.55)';
+    ctx.fillText('financing corridor', braceX + 8, (braceY1 + braceY2)/2 + 7);
+
+    // ── Plot points: unattested vs attested importer ──
+    const uRisk = 0.68, uCost = 0.08 + 0.85 * Math.pow(0.68, 1.6);
+    const aRisk = 0.28, aCost = 0.06 + 0.38 * Math.pow(0.28, 1.4);
+
+    // Unattested point
+    ctx.beginPath();
+    ctx.arc(px(uRisk), py(uCost), 7, 0, Math.PI*2);
+    ctx.fillStyle = '#C8504A';
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    // Attested point
+    ctx.beginPath();
+    ctx.arc(px(aRisk), py(aCost), 7, 0, Math.PI*2);
+    ctx.fillStyle = '#3CB464';
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    // Arrow from unattested to attested
+    ctx.beginPath();
+    ctx.moveTo(px(uRisk) - 10, py(uCost));
+    ctx.lineTo(px(aRisk) + 10, py(aCost));
+    ctx.strokeStyle = 'rgba(255,255,255,0.25)';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([3, 4]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Label the movement
+    const midX = (px(uRisk) + px(aRisk)) / 2;
+    const midY = (py(uCost) + py(aCost)) / 2 - 14;
+    ctx.font = `400 8px 'DM Mono', monospace`;
+    ctx.fillStyle = 'rgba(255,255,255,0.45)';
+    ctx.textAlign = 'center';
+    ctx.fillText('attestation moves', midX, midY);
+    ctx.fillText('importer down curve', midX, midY + 11);
+
+    // Point labels
+    ctx.font = `600 8.5px 'DM Sans', sans-serif`;
+    ctx.fillStyle = 'rgba(200,80,74,0.9)';
+    ctx.textAlign = 'center';
+    ctx.fillText('Unattested', px(uRisk), py(uCost) + 18);
+
+    ctx.fillStyle = 'rgba(60,180,100,0.9)';
+    ctx.fillText('Attested', px(aRisk), py(aCost) - 14);
+  }
+
+  draw();
+  window.addEventListener('resize', draw);
+})();
+
+document.addEventListener('keydown', e => {
+  if(e.key==='Escape') hiwClose();
+  if(hiwActive!==null){ if(e.key==='ArrowRight') hiwNav(1); if(e.key==='ArrowLeft') hiwNav(-1); }
+});
+</script>
